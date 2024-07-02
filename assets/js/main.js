@@ -1,12 +1,13 @@
 
   
-  
+// functions that need to run before anything else
 makeComputerChoice();
+
+// next round button event listener
 document.getElementById("next-round").addEventListener("click", function(event) {
     event.preventDefault();
     makeComputerChoice();
   });
-// computer weather to beat
 /** Randomly pick a weather icon and display it in the 'weather to beat' section */
 function makeComputerChoice() {
     const computerWeatherArr = ['01d','02d','03d','04d','09d','10d'];
