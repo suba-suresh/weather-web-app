@@ -8,7 +8,107 @@
     <title>Weather Web App</title>
 </head>
 <body>
+    <!-- Page Header-->
+    <header>
+        <h1>Sun, Clouds, Rain</h1><br><br>
+    </header>
+
+    <main class="container">
+        <!-- Weather Entry Button Form Section-->
+        <form class="row">
+            <!-- Location Entry-->
+            <input class="col-3" type="text" id="" name="" value="Location: ">
+            <!-- Country Pull Down-->
+            <select class="col-2"name="" id="">
+                <option value="countryA">CountryA</option>
+                <option value="countryB">CountryB</option>
+                <option value="countryC">CountryC</option>
+              </select>
+            <!-- Submit Button -->
+            <button class="col-2 blue-button-color">Search</button>
+        </form>
+
+        <!-- User Choice Indication-->
+        <br><br><h3>User Choice:</h3>
+            <div>
+            <p>Location& Country Placed Here</p>
+            </div><br><br>
+
+        <!-- Weather Display Area -->
+        <section class="row">
+            <!-- Todays Weather-->
+            <div class = "col-2">
+                <h3>Today:</h3>
+                <p>Temperature</p>
+                <p>Weather Symbol</p>
+                <p>Win or Lose SWR Symbol</p>
+            </div>
+            <!-- Following 5 Days Weather-->
+            <div class = "col-1">
+                <h3>Day2:</h3>
+                <p>Temperature</p>
+                <p>Weather Symbol</p>
+                <p>Win or Lose SWR Symbol</p>
+            </div>
+            <div class = "col-1">
+                <h3>Day3:</h3>
+                <p>Temperature</p>
+                <p>Weather Symbol</p>
+                <p>Win or Lose SWR Symbol</p>
+            </div>
+            <div class = "col-1">
+                <h3>Day4:</h3>
+                <p>Temperature</p>
+                <p>Weather Symbol</p>
+                <p>Win or Lose SWR Symbol</p>
+            </div>
+            <div class = "col-1">
+                <h3>Day5:</h3>
+                <p>Temperature</p>
+                <p>Weather Symbol</p>
+                <p>Win or Lose SWR Symbol</p>
+            </div>
+            <div class = "col-1">
+                <h3>Day6:</h3>
+                <p>Temperature</p>
+                <p>Weather Symbol</p>
+                <p>Win or Lose SWR Symbol</p>
+            </div>
+            <!-- VS Marker-->
+            <div class = "col-2">
+                <h2>VS</h2>
+            </div>
+            <!-- Computer Game Weather-->
+            <div class = "col-3">
+                <h3>The Weather to Beat:</h3>
+                <p>Weather Symbol</p>
+            </div>
+        </section>
+
+        <!-- Initial Game Banner (To Hide When Game Starts)-->
+        <section class="game-banner">
+            <p>Welcome to Sun, Clouds, Rain.</p>
+            <p>Rock, paper, scissors, but for weather.</p>
+            <p>To start a new game, begin by searching for a location.</p>
+        </section>
+
+        <!-- Game Score-->
+        <section>
+            <br><br><h2>You - "your score", Computer - "your score" : You/Computer Wins!</h2><br><br>
+        </section>
+
+    </main>
     
+
+    <footer class="container">
+        <div class="row">
+        <!-- How to Play Button-->
+        <button class="col-2 blue-button-color">How to play</button>
+
+        <!-- Next Round Button-->
+        <button class="col-2 blue-button-color" >Next Round</button>
+        </div>
+    </footer>
 
 
 <!-- js dependencies -->
