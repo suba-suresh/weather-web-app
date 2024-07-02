@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+
+body {
+    background-color: #A4C4EF;
+    font-family: "Margarine", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.blue-button-color {
+    background-color: #56EEF4;
+}
+
+
+footer {
+    background-color: #357DED;
+}
