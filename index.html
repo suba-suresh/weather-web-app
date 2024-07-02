@@ -91,7 +91,9 @@
             <!-- Computer Game Weather-->
             <div class="col-3">
                 <h3>The Weather to Beat:</h3>
-                <p>Weather Symbol</p>
+                <div id="computer-choice">
+                    <p id="computer-default" class="">?</p>
+                </div>
             </div>
         </section>
 
@@ -110,8 +112,8 @@
 
     </main>
     
-    <footer class="container">
-        <div class="row">
+    <footer class="container-fluid py-2">
+        <div class="row d-flex justify-content-around">
             <!-- How to Play Button and Modal-->
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary col-2 blue-button-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -149,7 +151,7 @@
                 </div>
             </div>
             <!-- Next Round Button-->
-            <button class="col-2 blue-button-color" >Next Round</button>
+            <button id="next-round" class="col-2 blue-button-color" >Next Round</button>
         </div>
     </footer>
 
