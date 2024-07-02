@@ -8,9 +8,20 @@ body {
     font-style: normal;
 }
 
+h1  {
+    font-size: 4rem;
+}
+
 .blue-button-color {
     background-color: #56EEF4;
 }
+
+.game-banner {
+    font-size: 2rem;
+    width: 600px;
+    background-color: #EF7B45;
+    border: 5px, solid, black;
+} 
 
 
 footer {
