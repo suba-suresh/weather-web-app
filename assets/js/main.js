@@ -4,6 +4,7 @@ const units = "metric";
   
 // functions that need to run before anything else
 makeComputerChoice();
+hideScore();
 
 const cityNameElement = document.getElementById("city-name");
 const currTempElement = document.getElementById("curr-temp");
@@ -14,6 +15,7 @@ const formElement = document.querySelector('form');
 formElement.addEventListener('submit', function(event) {
     event.preventDefault(); 
     handleButtonClick();
+    hideBanner();
 });
 
 function handleButtonClick() {
@@ -51,3 +53,21 @@ function makeComputerChoice() {
     // document.getElementById('computer-default').classList.add("hidden");
     document.getElementById('computer-choice').innerHTML = `<img src="${computerChoiceImage}">`;
 }
+
+
+// hide score at start of game
+function hideScore() {
+    let gameScore = document.getElementById("show-score");
+    gameScore.style.display="none";
+}
+
+// hide banner and show score when submit clicked
+function hideBanner() {
+    let welcomeBanner = document.getElementById("welcome-banner");
+    welcomeBanner.style.display="none";
+    let gameScore = document.getElementById("show-score");
+    gameScore.style.display="block";
+}
+
+
+
