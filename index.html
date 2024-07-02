@@ -19,30 +19,34 @@
         <!-- Weather Entry Button Form Section-->
         <form class="row-3">
             <!-- Location Entry-->
-            <input class="col-3 search" type="text" id="city-input" name="" placeholder="Location: "  spellcheck="false" autocomplete="off" required> 
+            <input class="col-3 search" type="text" id="city-input"  placeholder="Location: "  spellcheck="false" autocomplete="off" required> 
             <!-- Country Pull Down-->
-            <select class="col-2"name="" id="">
-                <option value="countryA">United Kingdom</option>
-            <select class="col-3" name="" id="">
-                <option value="countryA">CountryA</option>
-                <option value="countryB">CountryB</option>
-                <option value="countryC">CountryC</option>
+            <select class="col-2"  id="country-select">
+                <option value="AU">Australia</option>
+                <option value="NZ">New Zealand</option>
+                <option value="CA">Canada</option>
+                <option value="US">USA</option>
+                <option value="GB">UK</option>
             </select>
-
             <!-- Submit Button -->
-            
-            <button id="submit-button" class="col-2 blue-button-color">Search</button>
-            
+              <button id="submit-button" class="col-2 blue-button-color">Search</button>    
         </form>
 
-        <!-- User Choice Indication-->
+        <!-- User Choice Indication -->
         <br><br>
-        <h3>User Choice:</h3>
-            <div id="user-choice">
-                <h2 id="city-name"></h2>
-                <p id="curr-temp"></p>
+        <div id="user-choice" class="d-flex align-items-center">
+            <div>
+                <h3>Today:</h3>
+                <p id="curr-temp" class="mb-0"></p>
             </div>
-             <br><br>
+            <div id="weather-icon" class="ms-3">
+            </div>
+            <div id="user-choice" class="col-3 text-center">
+                <h3 id="user-choice-label" class="mb-0">User Choice:</h3>
+                <h2 id="city-name" class="mb-0"></h2>
+            </div>            
+        </div>
+        <br><br>
 
         <!-- Weather Display Area -->
         <section class="row">
