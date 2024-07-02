@@ -14,8 +14,13 @@
     
     <!-- Search bar start -->
     <div class="search">
-        <input id="search-result" type="text" placeholder="enter city name" spellcheck="false" name="city" required/>
-        <button id="searchButton" onclick="getWeather()">Search</button>
+        <input id="city-input" type="text" placeholder="Enter city name" spellcheck="false" required/>
+        <button id="submit-button">Search</button>
+    </div>
+    
+    <div id="current-weather">
+        <h2 id="city-name"></h2>
+        <p id="curr-temp"></p>
     </div>
     <!-- Search bar end -->
 
