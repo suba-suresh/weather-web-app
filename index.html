@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +21,8 @@
             <!-- Location Entry-->
             <input class="col-3 search" type="text" id="city-input" name="" placeholder="Location: "  spellcheck="false" autocomplete="off" required> 
             <!-- Country Pull Down-->
+            <select class="col-2"name="" id="">
+                <option value="countryA">United Kingdom</option>
             <select class="col-3" name="" id="">
                 <option value="countryA">CountryA</option>
                 <option value="countryB">CountryB</option>
@@ -108,21 +109,49 @@
         </section>
 
     </main>
-
-
+    
     <footer class="container">
         <div class="row">
-            <!-- How to Play Button-->
-            <button class="col-2 blue-button-color">How to play</button>
-
+            <!-- How to Play Button and Modal-->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary col-2 blue-button-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            How to play
+            </button>
+             <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Instructions on how to play:</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <h4>Sun, Clouds, Rain is a variant of Rock, Paper, Scissors.</h4>
+                        <ol>
+                            <li>The computer will randomly select a weather type.</li>						
+                            <li>The User must search for a location. The weather of today and the next five days will be their play move.</li>
+                            <li>The graph below determines which weather is stronger. Whoever wins the most weather comparisons out of six is the winner.</li>										
+                            <li>To start the next round, simply search for your next location.</li>
+                            <li>Wildcard: Thunderstorms will win no matter what</li>
+                        </ol>
+                    <img class="games-rules" src="./assets/images/sun, cloud, rain rules diagram.png" alt="sun cloud rain rules diagram">
+                        <ul>
+                            <li>sun > rain > clouds > sun</li>
+                            <li>sun = clear sky or few clouds</li>git add .
+                            <li>clouds = scattered clouds, broken clouds, mist</li>
+                            <li>rain = shower rain, rain, thunderstorm, snow</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
             <!-- Next Round Button-->
-            <button class="col-2 blue-button-color">Next Round</button>
+            <button class="col-2 blue-button-color" >Next Round</button>
         </div>
     </footer>
-
-
-
-
 
 
     <!-- js dependencies -->
