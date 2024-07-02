@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Weather Web App</title>
 </head>
+
 <body>
     <!-- Page Header-->
     <header>
@@ -15,71 +18,77 @@
 
     <main class="container">
         <!-- Weather Entry Button Form Section-->
-        <form class="row">
+        <form class="row-3">
             <!-- Location Entry-->
-            <input class="col-3" type="text" id="" name="" value="Location: ">
+            <input class="col-3 search" type="text" id="city-input" name="" placeholder="Location: "  spellcheck="false" autocomplete="off" required> 
             <!-- Country Pull Down-->
-            <select class="col-2"name="" id="">
+            <select class="col-3" name="" id="">
                 <option value="countryA">CountryA</option>
                 <option value="countryB">CountryB</option>
                 <option value="countryC">CountryC</option>
-              </select>
+            </select>
+
             <!-- Submit Button -->
-            <button class="col-2 blue-button-color">Search</button>
+            
+            <button id="submit-button" class="col-2 blue-button-color">Search</button>
+            
         </form>
 
         <!-- User Choice Indication-->
-        <br><br><h3>User Choice:</h3>
-            <div>
-            <p>Location& Country Placed Here</p>
-            </div><br><br>
+        <br><br>
+        <h3>User Choice:</h3>
+            <div id="user-choice">
+                <h2 id="city-name"></h2>
+                <p id="curr-temp"></p>
+            </div>
+             <br><br>
 
         <!-- Weather Display Area -->
         <section class="row">
             <!-- Todays Weather-->
-            <div class = "col-2">
+            <div class="col-2">
                 <h3>Today:</h3>
                 <p>Temperature</p>
                 <p>Weather Symbol</p>
                 <p>Win or Lose SWR Symbol</p>
             </div>
             <!-- Following 5 Days Weather-->
-            <div class = "col-1">
+            <div class="col-1">
                 <h3>Day2:</h3>
                 <p>Temperature</p>
                 <p>Weather Symbol</p>
                 <p>Win or Lose SWR Symbol</p>
             </div>
-            <div class = "col-1">
+            <div class="col-1">
                 <h3>Day3:</h3>
                 <p>Temperature</p>
                 <p>Weather Symbol</p>
                 <p>Win or Lose SWR Symbol</p>
             </div>
-            <div class = "col-1">
+            <div class="col-1">
                 <h3>Day4:</h3>
                 <p>Temperature</p>
                 <p>Weather Symbol</p>
                 <p>Win or Lose SWR Symbol</p>
             </div>
-            <div class = "col-1">
+            <div class="col-1">
                 <h3>Day5:</h3>
                 <p>Temperature</p>
                 <p>Weather Symbol</p>
                 <p>Win or Lose SWR Symbol</p>
             </div>
-            <div class = "col-1">
+            <div class="col-1">
                 <h3>Day6:</h3>
                 <p>Temperature</p>
                 <p>Weather Symbol</p>
                 <p>Win or Lose SWR Symbol</p>
             </div>
             <!-- VS Marker-->
-            <div class = "col-2">
+            <div class="col-2">
                 <h2>VS</h2>
             </div>
             <!-- Computer Game Weather-->
-            <div class = "col-3">
+            <div class="col-3">
                 <h3>The Weather to Beat:</h3>
                 <p>Weather Symbol</p>
             </div>
@@ -94,40 +103,34 @@
 
         <!-- Game Score-->
         <section>
-            <br><br><h2>You - "your score", Computer - "your score" : You/Computer Wins!</h2><br><br>
+            <br><br>
+            <h2>You - "your score", Computer - "your score" : You/Computer Wins!</h2><br><br>
         </section>
 
     </main>
-    
+
 
     <footer class="container">
         <div class="row">
-        <!-- How to Play Button-->
-        <button class="col-2 blue-button-color">How to play</button>
+            <!-- How to Play Button-->
+            <button class="col-2 blue-button-color">How to play</button>
 
-        <!-- Next Round Button-->
-        <button class="col-2 blue-button-color" >Next Round</button>
+            <!-- Next Round Button-->
+            <button class="col-2 blue-button-color">Next Round</button>
         </div>
     </footer>
 
 
-    
-    <!-- Search bar start -->
-    <div class="search">
-        <input id="city-input" type="text" placeholder="Enter city name" spellcheck="false" required/>
-        <button id="submit-button">Search</button>
-    </div>
-    
-    <div id="current-weather">
-        <h2 id="city-name"></h2>
-        <p id="curr-temp"></p>
-    </div>
-    <!-- Search bar end -->
 
-    
-<!-- js dependencies -->
+
+
+
+    <!-- js dependencies -->
     <script src="assets/js/main.js"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
     <script src="https://kit.fontawesome.com/82f70701b4.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
