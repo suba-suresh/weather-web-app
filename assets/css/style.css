@@ -31,4 +31,9 @@ h1  {
 
 footer {
     background-color: #357DED;
+    width: 100%;
+}
+
+.hidden {
+    visibility: hidden;
 }
