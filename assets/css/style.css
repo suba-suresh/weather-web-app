@@ -19,6 +19,7 @@ h1  {
 
 .blue-button-color {
     background-color: #56EEF4;
+    color: black;
 }
 
 .game-banner {
@@ -31,4 +32,8 @@ h1  {
 
 footer {
     background-color: #357DED;
+}
+
+.games-rules {
+    width: 400px;
 }
