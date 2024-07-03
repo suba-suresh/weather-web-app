@@ -198,7 +198,18 @@ function resultMessage() {
     // results message
     const resultTally = document.getElementById('result-tally');
     const winnerMessage = document.getElementById('winner-message');
-    resultTally.innerHTML = `<h2>You - ${userScore}/6, Computer - ${computerScore}/6, which means:</h2>`;
+    resultTally.innerHTML = `<h2>You won ${userScore}/6, Computer won ${computerScore}/6, which means:</h2>`;
+    // Determine the winner and set the appropriate message
+    let message;
+    if (userScore > computerScore) {
+        message = "Congratulations! You win!";
+    } else if (userScore < computerScore) {
+        message = "Sorry, the computer wins. Better luck next time!";
+    } else {
+        message = "It's a tie!";
+    }
+    // winner message
+    winnerMessage.innerHTML = `<h2>${message}</h2>`;
 }
 
 // hide score at start of game
