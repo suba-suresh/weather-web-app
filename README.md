@@ -2,7 +2,7 @@
 
 Sun Clouds Rain is a site that is targetted towards chiildren to look up the weather for a given location - with the current day and a further 5 days weather forecast shown for the location entered.  The experience also includes a game Sun Clouds Rain, which is similar to Rock Paper Scisssors but using the Weather.  The computer picks some random Weather, which is then compared against each of the six days of weather shown and a winner is shown.
 
-![Responsive Mockup](assets/suppdocs/Sun,%20Clouds,%20Rain.pdf)
+![Responsive Mockup](./assets/suppdocs/SunCloudsRain.pdf)
 
 ## Index – Table of Contents
 * [User Experience (UX)](#user-experience-ux) 
@@ -63,6 +63,8 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
   - The site has a clearly marked input field for the user to enter the location for the weather forecast.  A country pull down is also included, to help resolve any issues with identical location names in different countries.  At this stage only a limited number of countries have been added and future work is needed to increase the country coverage. 
 
+![Capture Location](documentation/screenshots/home.png)
+
 - __Capture First name for Sun Clouds Rain Game__
 
   - The site has a clearly marked input field for the user to enter theor first name.  Which is then used as Part of the Sun Clouds Rain game to tailer the messaging.
@@ -74,52 +76,44 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
 - __Confirmation of Location__
 
-  - FThe  
+  - Todays weather togther with confirmation of the Location is displayed after submit is clicked.
 
+![Confirmation of Location](documentation/screenshots/home.png)
 
+- __Today and 5 Days of Weather__
 
-- __Principles and Objectives Section__
+  - Todays weather (Temperature in degrees celcius and the Cloud/Rain/Sun symbol) is shon at the left hand side.
+  - The weather for the next five days is shown to the right of todays weather.
 
-  - On the landing page the first thing the user can see is a summary of what Prevent aims to do, how schools are involved, the role of prevent officers, and how to spot the signs of radicalisation.
-  - The user will see the value prevent and will hopefully want to learn more on the other web pages.
+![Display The Weather](documentation/screenshots/home.png)
 
-![Club Ethos](documentation/screenshots/home.png)
+- __Sun Clouds Rain Game - Computer Choice__ 
 
-- __The Footer__ 
+  - The computer randomnly selects some weather to play against the user in the Sun Cluds Rain Game.  This is displayed to the right, after the VS (versus) symbol.
 
-  - The footer section includes copyright disclaimer information, a button to a feedback modal form, and social media links to counter terrorism police UK.
-  - The footer is valuable to the user as it encourages them to keep connected via social media, provide us with feedback, and informs any concerned parties of our sources of information.
+![Sun Clouds Rain Computer Choice](documentation/screenshots/footer.png)
 
-![Footer](documentation/screenshots/footer.png)
+- __Sun Clouds Rain Game Score__ 
 
-- __Feedback Modal__ 
+  - The result of the Sun Cluds Rain game is shown under each days weather.
+  - Green tick - user won.
+  - Red Cross - computer won.
+  - Blue Equals - draw.
+  - These results are correlaterd into an overal winners statement at the bottom tailored with the name the user entered.
 
-  - The feedback button found in the footer, opens up a modal which has an email field, textbox area, close and send buttons.
-  - This allows the user to send any feedback they want to about the website, increasing their engagement.
+![Sun Clouds Rain Score](documentation/screenshots/feedback-form.png)
 
-![feedback modal](documentation/screenshots/feedback-form.png)
+- __Sun Clouds Rain Rules__
 
-- __Resources Page__
+  - A How to play rule is provided and when clicked the rules pop up in a modal. They can be cancelled and the user returns to the main screen.
 
-  - The resources page will provide the user with motivational images relating to the elements of Prevent; as well as embed youtube videos from related organizations.
-  - This page is useful to the user as it condenses factual information into easily digestible segments.
+![Game Rules](documentation/screenshots/resources-mobile.png)
 
-![Gallery](documentation/screenshots/resources-mobile.png)
+- __New game__
 
-- __Advice Page__
+  - The new game button, resets the Sun Clouds Rain Game.  The computer randomnly selects some new weather for the Sun Clouds Rain game.  The user can enter a new weather forecast location  - to get new weather and/or play the game again.
 
-  - This page allows the user to find the appropriate authorities to contact about their concerns.
-  - Alternatively they can provide their contact information if they wish to be contacted. They also have the option to specify their preferred means of contact.
-  - This page is useful to the user as after viewing the other pages, they may recognise symptons of radicalisation in a friend/themself, and need advice on what to do.
-
-![Sign Up](documentation/screenshots/advice.png)
-
-- __Case Studies Page__
-
-  - The case studies page will provide the user examples of how Prevent has stepped in, and deradicalised people before they put themselves or others to harm.
-  - This page is useful to the user as it puts faces to the issue of extremism and shows how things can be turned around. This personifies the issues the site is trying to convey.
-
-![Case Studies](documentation/screenshots/case-studies.png)
+![New Game](documentation/screenshots/resources-mobile.png)
 
 ### Features Left to Implement
 
