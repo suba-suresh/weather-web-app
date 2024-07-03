@@ -8,6 +8,10 @@ const todayResult = document.getElementById('today-result');
 const winIcon = '<i class="fa-solid fa-circle-check green-win"></i>';
 const loseIcon = '<i class="fa-solid fa-circle-xmark red-lose"></i>';
 const equalIcon = '<div class="blue-circle"><i class="fa-solid fa-equals"></i></div>';
+
+// score results
+let userScore = 0;
+let computerScore = 0;
   
 // functions that need to run before anything else
 makeComputerChoice();
@@ -18,33 +22,33 @@ const currTempElement = document.getElementById("curr-temp");
 const weatherIconElement = document.getElementById("weather-icon");
 const cityInputElement = document.getElementById("city-input");
 const countrySelectElement = document.getElementById("country-select");
+
+// variables needed for entering user name
 const firstNameElement = document.getElementById("first-name");
+const userChoiceLabel = document.getElementById('user-choice-label');
+
 const submitButtonElement = document.getElementById("submit-button");
-// IDs for five-day forecast elements
-const fiveDayForecastElement = document.getElementById("five-day-forecast")
-const day2TempElement = document.getElementById("day2-temp");
-const day2WeatherIconElement = document.getElementById("day2-weather-icon");
-const day3TempElement = document.getElementById("day3-temp");
-const day3WeatherIconElement = document.getElementById("day3-weather-icon");
-const day4TempElement = document.getElementById("day4-temp");
-const day4WeatherIconElement = document.getElementById("day4-weather-icon");
-const day5TempElement = document.getElementById("day5-temp");
-const day5WeatherIconElement = document.getElementById("day5-weather-icon");
-const day6TempElement = document.getElementById("day6-temp");
-const day6WeatherIconElement = document.getElementById("day6-weather-icon");
 
-
+// submit button event listener
 const formElement = document.querySelector('form');
 formElement.addEventListener('submit', function(event) {
     event.preventDefault(); 
+    // replace user with name
+    if (firstNameElement.value !== "") {
+        userChoiceLabel.innerText = `${firstNameElement.value}'s choice:`
+    }
     handleButtonClick();
     hideBanner();
 });
 
+/** fetch request for today's weather */
 function handleButtonClick() {
     const cityName = cityInputElement.value;
     const countryCode = countrySelectElement.value;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid=${apiKey}&units=${units}`;
+
+    userScore = 0;
+    computerScore = 0;
 
     console.log('Fetching weather data from URL:', url); 
 
@@ -66,24 +70,30 @@ function handleButtonClick() {
                     if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
                         todayResult.innerHTML = equalIcon;
                     } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        ++userScore;
                         todayResult.innerHTML = winIcon;
                     } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        ++computerScore;
                         todayResult.innerHTML = loseIcon;
                     }
                     break;
                 case '03d':
                     if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        ++computerScore;
                         todayResult.innerHTML = loseIcon;
                     } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
                         todayResult.innerHTML = equalIcon;
                     } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        ++userScore;
                         todayResult.innerHTML = winIcon;
                     }
                     break;
                 case '09d':
                     if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        ++userScore;
                         todayResult.innerHTML = winIcon;
                     } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        ++computerScore;
                         todayResult.innerHTML = loseIcon;
                     } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
                         todayResult.innerHTML = equalIcon;
@@ -91,8 +101,8 @@ function handleButtonClick() {
                     break;
                 default:
                     console.log('computer choice is null');
-            }            
-
+            }     
+        
             cityInputElement.value = '';
             // Fetch five-day forecast after fetching current weather
             fetchFiveDayForecast(cityName, countryCode);
@@ -103,8 +113,6 @@ function handleButtonClick() {
             alert('Error fetching weather data. Please try again later.');
 
             cityInputElement.value = '';
-
-            
         });
 }
 
@@ -138,24 +146,30 @@ function fetchFiveDayForecast(cityName, countryCode) {
                         if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
                             dayResult.innerHTML = equalIcon;
                         } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            ++userScore;
                             dayResult.innerHTML = winIcon;
                         } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            ++computerScore;
                             dayResult.innerHTML = loseIcon;
                         }
                         break;
                     case '03d':
                         if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            ++computerScore;
                             dayResult.innerHTML = loseIcon;
                         } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
                             dayResult.innerHTML = equalIcon;
                         } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            ++userScore;
                             dayResult.innerHTML = winIcon;
                         }
                         break;
                     case '09d':
                         if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            ++userScore;
                             dayResult.innerHTML = winIcon;
                         } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            ++computerScore;
                             dayResult.innerHTML = loseIcon;
                         } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
                             dayResult.innerHTML = equalIcon;
@@ -164,9 +178,10 @@ function fetchFiveDayForecast(cityName, countryCode) {
                     default:
                         console.log('computer choice is null');
                 }            
-
             }
+            resultMessage();
         })
+
         .catch(error => {
             console.error('Error fetching five-day forecast:', error);
         });
@@ -186,6 +201,30 @@ function makeComputerChoice() {
     document.getElementById('computer-choice').innerHTML = `<img src="${computerChoiceImage}">`;
 }
 
+/** add wins of user and computer, then determine who has won, and display results */
+function resultMessage() {
+    // results message
+    const resultTally = document.getElementById('result-tally');
+    const winnerMessage = document.getElementById('winner-message');
+
+    if (firstNameElement.value !== "") {
+        userChoiceLabel.innerText = `${firstNameElement.value}'s choice:`
+        resultTally.innerHTML = `<h2>${firstNameElement.value} won ${userScore}/6, Computer won ${computerScore}/6:</h2>`;
+    } else {
+        resultTally.innerText = `You won ${userScore}/6, Computer won ${computerScore}/6:`;
+    }
+    // Determine the winner and set the appropriate message
+    let message;
+    if (userScore > computerScore) {
+        message = "Congratulations! You win!";
+    } else if (userScore < computerScore) {
+        message = "Sorry, the computer wins. Better luck next time!";
+    } else {
+        message = "It's a tie!";
+    }
+    // winner message
+    winnerMessage.innerText = `${message}`;
+}
 
 // hide score at start of game
 function hideScore() {
@@ -201,5 +240,61 @@ function hideBanner() {
     gameScore.style.display="block";
 }
 
+// Find Todys Day In The Week Index
+const todayDate = new Date();
+const todayDay = todayDate.getDay();
+
+console.log(todayDay);
+
+//Establish Day2-6 Days and apply to HTML
+const day2 = document.getElementById("day2");
+  day2.innerText = `${dayConv(checkDay(todayDay+1))}`
+
+  const day3 = document.getElementById("day3");
+  day3.innerText = `${dayConv(checkDay(todayDay+2))}`
+
+  const day4 = document.getElementById("day4");
+  day4.innerText = `${dayConv(checkDay(todayDay+3))}`
+
+  const day5 = document.getElementById("day5");
+  day5.innerText = `${dayConv(checkDay(todayDay+4))}`
+
+  const day6 = document.getElementById("day6");
+  day6.innerText = `${dayConv(checkDay(todayDay+5))}`
+
+// Convert Day Index to Named Day 
+function dayConv(day) {
+    switch (day) {
+        case 0:
+        return "Sunday";
+        break;
+        case 1:
+        return "Monday";
+        break;
+        case 2:
+        return "Tuesday";
+        break;
+        case 3:
+        return "Wednesday";
+        break;
+        case 4:
+        return "Thursday";
+        break;
+        case 5:
+        return "Friday";
+        break;
+        case 6:
+        return "Saturday";
+    }
+}
+
+// Correct Future Days That Go Above Index 6
+function checkDay(day) {
+    if (day < 7) {
+       return day;
+    } else {
+        return day-7;
+    }
+}
 
 
