@@ -1,8 +1,8 @@
 # Sun Clouds Rain
 
-Sun Clouds Rain is a site that is targetted towards chiildren to look up the weather for a given location - with the current day and a further 5 days weather forecast shown for the location entered.  The experience also includes a game Sun Clouds Rain, which is similar to Rock Paper Scisssors but using the Weather.  The computer picks some random Weather, which is then compared against each of the six days of weather shown and a winner is identified and shown.
+Sun Clouds Rain is a site that is targetted towards chiildren to look up the weather for a given location - with the current day and a further 5 days weather forecast shown for the location entered.  The experience also includes a game - Sun Clouds Rain, which is similar to Rock Paper Scissors but using the Weather.  The computer randomly picks some Weather, which is then compared against each of the six days of weather shown for the user. A winner is identified and displayed.
 
-![Responsive Mockup](./assets/suppdocs/SunCloudsRain.pdf)
+![Responsive Mockup](./assets/suppdocs/initialwireframe.png)
 
 ## Index – Table of Contents
 * [User Experience (UX)](#user-experience-ux) 
@@ -20,7 +20,7 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
 -   ### User stories
 
-    -   #### MVP(Minimum Viable Product):
+    -   #### Weather MVP (Minimum Viable Product):
         1. In order to **see what website I am on** as a **user**, I can **see the h1 title at the top of the page**
         2. In order to **select a location for the weather** as a **user**, I can **type in a location in the search bar**
         3. In order to **submit my weather request** as a **user**, I can **click the search button**
@@ -37,7 +37,7 @@ An ideation process was undertaken to suggest and prioritise the user experience
         12. In order to **clearly see the 5 day forecast** as a **user**, I can **see the date for each days forecast**
         13. In order to **promote the site as a way to engage users** as a **provider**, I can **give about us info on our organization and its aims**
         
-        #### Sub Clouds Rain Game:
+        #### Sun Clouds Rain Game:
         14. In order to **know that my weather is competing against the computer** as a **user**, I can **see a big vs sign just right of my selection**
         15. In order to **see what the computer has chosen** as a **user**, I can **see the computer’s weather icon below the words ‘The weather to beat’**
         16. In order to **know which weather has beaten or been beaten by the computer’s choice** as a **user**, I can **see a + or - symbol below each days weather symbol**
@@ -55,41 +55,41 @@ An ideation process was undertaken to suggest and prioritise the user experience
 ### Features Completed
 
 - __Landing Page__
-  - The site consists of a single landing page which clearly identifies the purpose of the site, is responsive and allows the user to enter their location and get a Weather Forecast.  On first entering the site a large banner is shown in the midle of the screen to explain it.  This banner is removed once the user enters a location and requests a weather forecast.  It is replaced with the Sun Clouds Rain scoring statement.
+  - The site consists of a single landing page which clearly identifies the purpose of the site, is responsive and allows the user to enter their location and get a Weather Forecast.  On first entering the site a large banner is shown in the midle of the screen to explain it.  This banner is removed once the user enters a location and requests a weather forecast.  It is then replaced with the Sun Clouds Rain scoring statement.
 
-![Nav Bar](documentation/screenshots/header.png)
+![Header](./assets/suppdocs/headerimage.png)
 
-- __Capture Location for Weather__
+- __Capture Search Location for Weather__
 
-  - The site has a clearly marked input field for the user to enter the location for the weather forecast.  A country pull down is also included, to help resolve any issues with identical location names in different countries.  At this stage only a limited number of countries have been added and future work is needed to increase the country coverage. 
+  - The site has a clearly marked input field for the user to enter the location that they want for the weather forecast.  A country pull down is also included, to help resolve any issues arising from identical location names in different countries.  At this stage only a limited number of countries have been added and future work is needed to increase the country coverage. It defaults to the UK.
 
 ![Capture Location](documentation/screenshots/home.png)
 
 - __Capture First name for Sun Clouds Rain Game__
 
-  - The site has a clearly marked input field for the user to enter theor first name.  Which is then used as Part of the Sun Clouds Rain game to tailer the messaging.
+  - The site has a clearly marked input field for the user to enter their first name.  Which is then used as part of the Sun Clouds Rain game to tailor the score messaging.
 
-- __Submit Location for Weather Forecast__
+- __Submit Search Location for Weather Forecast__
 
-  - The site has a clearly marked submit button - to submit the location and get a Weather Forecast.  This button also submits the first name for the first round of the Sun Clouds Rain game.
-  - When this button is clicked - the orange information banner is also removed from the screen and replace with the scoring statement for the Sun Clouds Rain Game.
+  - The site has a clearly marked search (submit) button - to submit the location and get a Weather Forecast.  This button also submits the first name for the first round of the Sun Clouds Rain game.
+  - When this button is clicked - the orange information banner is also removed from the screen and replaced with the scoring statement for the Sun Clouds Rain Game.
 
 - __Confirmation of Location__
 
-  - Todays weather togther with confirmation of the Location is displayed after submit is clicked.
+  - Todays weather togther with confirmation of the Location is displayed after search (submit) is clicked.
 
 ![Confirmation of Location](documentation/screenshots/home.png)
 
 - __Today and 5 Days of Weather__
 
-  - Todays weather (Temperature in degrees celcius and the Cloud/Rain/Sun symbol) is shon at the left hand side.
+  - Todays weather (Temperature in degrees celcius and the Cloud/Rain/Sun symbol) is shown at the left hand side.
   - The weather for the next five days is shown to the right of todays weather.
 
 ![Display The Weather](documentation/screenshots/home.png)
 
 - __Sun Clouds Rain Game - Computer Choice__ 
 
-  - The computer randomnly selects some weather to play against the user in the Sun Cluds Rain Game.  This is displayed to the right, after the VS (versus) symbol.
+  - The computer randomnly selects some weather to play against the user in the Sun Clouds Rain Game.  This is displayed to the right, after the VS (versus) symbol.
 
 ![Sun Clouds Rain Computer Choice](documentation/screenshots/footer.png)
 
@@ -105,13 +105,13 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
 - __Sun Clouds Rain Rules__
 
-  - A How to play rule is provided and when clicked the rules pop up in a modal. They can be cancelled and the user returns to the main screen.
+  - A How to play set of rules is provided and when clicked the rules pop up in a modal. They can be cancelled and the user returns to the main screen.
 
 ![Game Rules](documentation/screenshots/resources-mobile.png)
 
 - __New game__
 
-  - The new game button, resets the Sun Clouds Rain Game.  The computer randomnly selects some new weather for the Sun Clouds Rain game.  The user can enter a new weather forecast location  - to get new weather and/or play the game again.
+  - The new game button, resets the Sun Clouds Rain Game.  The computer randomnly selects some new weather for the Sun Clouds Rain game.  The user can enter a new weather forecast location  - to get new weather and play the game again.
 
 ![New Game](documentation/screenshots/resources-mobile.png)
 
@@ -135,17 +135,17 @@ An ideation process was undertaken to suggest and prioritise the user experience
 ## Design
 
 -   ### Single Page
-    -  We agreed that the site should be based on using a single page. Using JavaScript to change the display based on user entry.  A bootstrap modal was used to display the rule.
+    -  We agreed that the site should be based on using a single page. Using JavaScript to dynamically change the display based on user entry.  A bootstrap modal was selected to display the game rules.
 
 -   ### Colour Scheme
-    -  We agreed that blue colours (clouds) mixed with bright (wetaher) colours would work for our website. Including blue was important to underpin the link to weather. The colours picked were generated the website [Coolors](https://coolors.co/)
+    -  We agreed that blue colours (clouds) mixed with bright (weather) colours would work for our website. Including blue was important to underpin the link to weather. The colours picked were generated using the website [Coolors](https://coolors.co/)
 
         ![Colour Palette](documentation/colour-palette/colourpalette.png)
 
 -   ### Typography
     - Google Fonts were used to import Caveat and Maragrine fonts into styles.css.  These were chosen as they looked informal and related to the use of the site by children.
  
-    ![Font Pairing](documentation/font-family/font-pair.png)   
+    ![Font Pairing](./assets/suppdocs/googlefonts.png)   
 
 -   ### Logo/Icon
     - The logo design incorporates a smiling sun character image. This to reflect weather, the focus on younger users and creating fun from the game. The logo was generated using [bing copilot designer](https://www.bing.com/chat?q=Microsoft+Copilot&FORM=hpcodx)
@@ -154,32 +154,34 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
 -   ### Wireframes
 
-    -   #### Khadeeja Wireframes
+    -   #### Site Landing Wireframe
 
-        ![Khadeeja wireframes](documentation/wireframes/wireframe1.png)
+        ![Site Landing Wireframe](./assets/suppdocs/initialwireframe.png)
 
-    -   #### Yu homepage and case studies Wireframes
+    -   #### Weather and Game Wireframe
 
-        ![Yu homepage and case studies](documentation/wireframes/wireframe2.png)
+        ![Weather and Game Wireframe](./assets/suppdocs/gamewireframe.png)
 
-    -   #### Yu resources and advice Wireframes
+    -   #### Game Rules Wireframe
 
-        ![Yu resources and advice](documentation/wireframes/wireframe3.png)
+        ![Game Rules Wireframe](./assets/suppdocs/gamerules.png)
 
 
 ## Project Management
 
-An ideation process was undertaken to suggest and prioritise the user experience for the site.  From this user stories were generated, prioritised (including establishing a Minimum Viable Product) and managed using a Kanban board on GitHub.
+- An ideation process was undertaken to suggest and prioritise the user experience for the site.  From this user stories were generated, prioritised (including establishing a    Minimum Viable Product) and managed using a Kanban board on GitHub.
 
-Each user story:
+- Each user story:
   - Included Acceptance Criteria and Tasks.
   - Was tagged with its MoSCoW priority rating.
   - Was assigned an owner.
   - Was managed by the owner across to Done
 
-The Kanban board was regulalry reviewed bu the team.
+- The Kanban board was regulalry reviewed bu the team.
 
--   [Kanban Board](https://github.com/users/suba-suresh/projects/2)
+  -   #### Kanban Board
+
+      [Link to Kanban Board](https://github.com/users/suba-suresh/projects/2)
 
 
 ## Technologies Used
@@ -225,7 +227,7 @@ The Kanban board was regulalry reviewed bu the team.
   - Click save, and then wait for the deployment to be generated
   - Click visit site button at top of settings
 
-The live link can be found here - https://markchips.github.io/prevent-awareness/index.html
+The live link can be found here - https://suba-suresh.github.io/weather-web-app/
 
 
 ## Credits 
