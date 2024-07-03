@@ -82,6 +82,3 @@ function hideBanner() {
     let gameScore = document.getElementById("show-score");
     gameScore.style.display="block";
 }
-
-
-

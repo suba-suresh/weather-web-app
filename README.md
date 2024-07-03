@@ -32,12 +32,12 @@ An ideation process was undertaken to suggest and prioritise the user experience
         #### Weather Enhancements:
         8. In order to **avoid getting information from a place in the wrong country** as a **user**, I can **select my country from the drop down**
         9. In order to **see which location and country I have selected** as a **user**, I can **see my choice  next to the words: ‘user choice’**
-        10. In order to **understand where the weather location is** as a user I can see a map with the selected location marked on it.
+        10. In order to **understand where the weather location is** as a **user** I can **see a map with the selected location marked on it.**
         11. In order to **get a full weather view** as a **user**, I can **see pressure, humidity, pollen count and wind speed as part of the forecast**
         12. In order to **clearly see the 5 day forecast** as a **user**, I can **see the date for each days forecast**
         13. In order to **promote the site as a way to engage users** as a **provider**, I can **give about us info on our organization and its aims**
         
-        #### Sun Clouds Rain Game:
+        #### Sun Clouds Rain Game MVP:
         14. In order to **know that my weather is competing against the computer** as a **user**, I can **see a big vs sign just right of my selection**
         15. In order to **see what the computer has chosen** as a **user**, I can **see the computer’s weather icon below the words ‘The weather to beat’**
         16. In order to **know which weather has beaten or been beaten by the computer’s choice** as a **user**, I can **see a + or - symbol below each days weather symbol**
@@ -46,6 +46,8 @@ An ideation process was undertaken to suggest and prioritise the user experience
         19. In order to **to see information on how to play** as a **user**, I can **click the ‘how to play’ button found in the footer and see a diagram and steps appear in a pop up container**
         20. In order to **compete against a new computer choice** as a **user**, I can **press the ‘next round’ button**
         21. In order to **focus on the weather** as a **user**, I can **see the weather and choose whether or not to start the game.**
+          
+          #### Sun Clouds Rain Game Enhancements
         22. In order to **get to know other Sun, Clouds, Rain competitors** as a **user**, I can **join a social media community of other users**
         23. In order to **personalize the app** as a **user**, I can **enter my name and have it shown in the game versus the computer.**
         24. In order to **promote continued playing of the game** as a **user**, I can **see cumulative scores for multiple rounds of the game**
@@ -183,6 +185,7 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
       [Link to Kanban Board](https://github.com/users/suba-suresh/projects/2)
 
+- The Weather MVP and Sun Cloud Rain Game MVP user stories were completed.  In additiona - some of the Weather and some of the Sun Cloud Rain Game enhancement user stories were completed.
 
 ## Technologies Used
 
@@ -199,8 +202,8 @@ An ideation process was undertaken to suggest and prioritise the user experience
 -   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
 -   [GitHub:](https://github.com/) is used as the respository for the projects code after being pushed from Git.
 -   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
--   [bootstrap 5.3:](https://getbootstrap.com/) was the framework used to streamline styling classes.
--   [favicon:](https://favicon.io/) was used for creating website logo icons.
+-   [bootstrap 5.3:](https://getbootstrap.com/) was the framework used to create a responsive page and the rules modal.
+-   [favicon:](https://favicon.io/) was used for creating website page tab icon.
     
 
 ## Testing 
@@ -234,25 +237,11 @@ The live link can be found here - https://suba-suresh.github.io/weather-web-app/
 
 ### Content 
 
-- The layout was influenced by the following code institute projects:
-	- [Love Running](https://github.com/Code-Institute-Solutions/love-running-v3/tree/main/8.1-testing-and-validation)
-	- [Love Rosie](https://github.com/Code-Institute-Solutions/resume-miniproject-bootstrap4/tree/master)
-- The following UK government web pages were used for all factual information:
-	- Case Study: https://www.gov.uk/government/publications/the-prevent-duty-safeguarding-learners-vulnerable-to-radicalisation/case-studies
- 	- Prevent Officers on Home Page: https://www.met.police.uk/advice/advice-and-information/t/prevent/prevent/
-  	- Prevent Terrorism on Homepage: https://www.gov.uk/government/publications/independent-review-of-prevents-report-a[…]endent-review-of-prevent-one-year-on-progress-report-accessible
-  	- Prevent School on HomePage: https://www.teachingcitizenship.org.uk/wp-content/uploads/2022/08/ACT_Prevent-and-controversial-issues-guidance_guide-1.pdf
-  	- Prevent Spotting the Signs: https://www.met.police.uk/advice/advice-and-information/t/prevent/prevent/
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The layout was influenced by the following code institute project:
+	- [SME Weather API](https://github.com/kevin-ci/2404-BERKSB-APIs)
+- The OpenWeatherMap API was used to generate the current and forecast weather, together with generating the cloud/sun/rain weather images for the forecast.
 
 ### Media
 
-- The icons were taken from [Font Awesome](https://fontawesome.com/)
 - The fonts used were imported from [Google Fonts](https://fonts.google.com/)
-
-- Images were sourced from www.freepik.com, and taken from the following web pages:
-	- https://www.freepik.com/free-photo/black-white-vehicles-yellow-caution-tape-near-car-parking-lot-daytime-crime-scene_9818237.htm#fromView=search&page=1&position=34&uuid=69e5363c-95dc-4b74-96a1-cda464b3fd90
-	- https://www.freepik.com/free-vector/crime-scene-with-tape-concept-illustration_37573771.htm#fromView=search&page=1&position=7&uuid=f659683b-489f-444b-8ce9-267a93dde8c1
-	- https://www.freepik.com/free-photo/wedding-bouquet-rocks_3402602.htm#fromView=search&page=1&position=0&uuid=c9b5bc51-2d3c-4268-9e6b-5040e2925bb5
-	- https://www.freepik.com/free-ai-image/diverse-people-addicted-their-smart-devices-scrolling-through-looking-into-their-screens_186027476.htm#fromView=search&page=1&position=17&uuid=8515378b-b6bf-4255-95f5-2a4a3e313bdc
-	- http
+- The Weather images were used from the OpenWeatherMap API
