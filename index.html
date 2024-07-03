@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,9 +27,10 @@
         <!-- Weather Entry Button Form Section-->
         <form class="row-3">
             <!-- Location Entry-->
-            <input class="col-3 search" type="text" id="city-input"  placeholder="Location: "  spellcheck="false" autocomplete="off" required> 
+            <input class="col-3 search" type="text" id="city-input" placeholder="Location: " spellcheck="false"
+                autocomplete="off" required>
             <!-- Country Pull Down-->
-            <select class="col-2"  id="country-select">
+            <select class="col-2" id="country-select">
                 <option value="AU">Australia</option>
                 <option value="NZ">New Zealand</option>
                 <option value="CA">Canada</option>
@@ -41,7 +43,7 @@
             <!-- Country Pull Down-->
 
             <!-- Submit Button -->
-              <button id="submit-button" class="col-2 blue-button-color">Search</button>    
+            <button id="submit-button" class="col-2 blue-button-color">Search</button>
         </form>
 
         <!-- User Choice Indication -->
@@ -56,49 +58,53 @@
             <div id="user-choice" class="col-3 text-center">
                 <h3 id="user-choice-label" class="mb-0">User Choice:</h3>
                 <h2 id="city-name" class="mb-0"></h2>
-            </div>            
+            </div>
         </div>
         <br><br>
 
-        <!-- Weather Display Area -->
         <section class="row">
-            <!-- Todays Weather-->
-            <div class="col-2">
-                <h3>Today:</h3>
-                <p>Temperature</p>
-                <p>Weather Symbol</p>
-                <p>Win or Lose SWR Symbol</p>
-            </div>
-            <!-- Following 5 Days Weather-->
-            <div class="col-1">
-                <h3>Day2:</h3>
-                <p>Temperature</p>
-                <p>Weather Symbol</p>
-                <p>Win or Lose SWR Symbol</p>
-            </div>
-            <div class="col-1">
-                <h3>Day3:</h3>
-                <p>Temperature</p>
-                <p>Weather Symbol</p>
-                <p>Win or Lose SWR Symbol</p>
-            </div>
-            <div class="col-1">
-                <h3>Day4:</h3>
-                <p>Temperature</p>
-                <p>Weather Symbol</p>
-                <p>Win or Lose SWR Symbol</p>
-            </div>
-            <div class="col-1">
-                <h3>Day5:</h3>
-                <p>Temperature</p>
-                <p>Weather Symbol</p>
-                <p>Win or Lose SWR Symbol</p>
-            </div>
-            <div class="col-1">
-                <h3>Day6:</h3>
-                <p>Temperature</p>
-                <p>Weather Symbol</p>
-                <p>Win or Lose SWR Symbol</p>
+
+            <!-- Five-Day Forecast -->
+            <div id="five-day-forecast" class="col-5 row g-0">
+                <!-- Day 2 -->
+                <div class="col">
+                    <h3>Day 2:</h3>
+                    <p id="day2-temp">Temperature</p>
+                    <div id="day2-weather-icon"></div>
+                    <p>Win or Lose SWR Symbol</p>
+                </div>
+                
+                <!-- Day 3 -->
+                <div class="col">
+                    <h3>Day 3:</h3>
+                    <p id="day3-temp">Temperature</p>
+                    <div id="day3-weather-icon"></div>
+                    <p>Win or Lose SWR Symbol</p>
+                </div>
+                
+                <!-- Day 4 -->
+                <div class="col">
+                    <h3>Day 4:</h3>
+                    <p id="day4-temp">Temperature</p>
+                    <div id="day4-weather-icon"></div>
+                    <p>Win or Lose SWR Symbol</p>
+                </div>
+                
+                <!-- Day 5 -->
+                <div class="col">
+                    <h3>Day 5:</h3>
+                    <p id="day5-temp">Temperature</p>
+                    <div id="day5-weather-icon"></div>
+                    <p>Win or Lose SWR Symbol</p>
+                </div>
+                
+                <!-- Day 6 -->
+                <div class="col">
+                    <h3>Day 6:</h3>
+                    <p id="day6-temp">Temperature</p>
+                    <div id="day6-weather-icon"></div>
+                    <p>Win or Lose SWR Symbol</p>
+                </div>
             </div>
             <!-- VS Marker-->
             <div class="col-2">
@@ -127,47 +133,52 @@
         </section>
 
     </main>
-    
+
     <footer class="container-fluid py-2">
         <div class="row d-flex justify-content-around">
             <!-- How to Play Button and Modal-->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary col-2 blue-button-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            How to play
+            <button type="button" class="btn btn-primary col-2 blue-button-color" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                How to play
             </button>
-             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Instructions on how to play:</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Instructions on how to play:</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Sun, Clouds, Rain is a variant of Rock, Paper, Scissors.</h4>
+                            <ol>
+                                <li>The computer will randomly select a weather type.</li>
+                                <li>The User must search for a location. The weather of today and the next five days
+                                    will be their play move.</li>
+                                <li>The graph below determines which weather is stronger. Whoever wins the most weather
+                                    comparisons out of six is the winner.</li>
+                                <li>To start the next round, simply search for your next location.</li>
+                                <li>Wildcard: Thunderstorms will win no matter what</li>
+                            </ol>
+                            <img class="games-rules" src="./assets/images/sun, cloud, rain rules diagram.png"
+                                alt="sun cloud rain rules diagram">
+                            <ul>
+                                <li>sun > rain > clouds > sun</li>
+                                <li>sun = clear sky or few clouds</li>git add .
+                                <li>clouds = scattered clouds, broken clouds, mist</li>
+                                <li>rain = shower rain, rain, thunderstorm, snow</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                    <h4>Sun, Clouds, Rain is a variant of Rock, Paper, Scissors.</h4>
-                        <ol>
-                            <li>The computer will randomly select a weather type.</li>						
-                            <li>The User must search for a location. The weather of today and the next five days will be their play move.</li>
-                            <li>The graph below determines which weather is stronger. Whoever wins the most weather comparisons out of six is the winner.</li>										
-                            <li>To start the next round, simply search for your next location.</li>
-                            <li>Wildcard: Thunderstorms will win no matter what</li>
-                        </ol>
-                    <img class="games-rules" src="./assets/images/sun, cloud, rain rules diagram.png" alt="sun cloud rain rules diagram">
-                        <ul>
-                            <li>sun > rain > clouds > sun</li>
-                            <li>sun = clear sky or few clouds</li>git add .
-                            <li>clouds = scattered clouds, broken clouds, mist</li>
-                            <li>rain = shower rain, rain, thunderstorm, snow</li>
-                        </ul>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
                 </div>
             </div>
             <!-- Next Round Button-->
-            <button id="next-round" class="col-2 blue-button-color" >Next Round</button>
+            <button id="next-round" class="col-2 blue-button-color">Next Round</button>
         </div>
     </footer>
 
