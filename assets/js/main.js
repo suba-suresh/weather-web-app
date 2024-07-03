@@ -39,6 +39,7 @@ function handleButtonClick() {
             const weatherDescription = data.weather[0].description;
             const weatherIcon = data.weather[0].icon;
 
+            // variables needed for game results icons
             const todayResult = document.getElementById('today-result');
             const winIcon = '<i class="fa-solid fa-circle-check"></i>';
             const loseIcon = '<i class="fa-solid fa-circle-xmark"></i>';
@@ -54,39 +55,39 @@ function handleButtonClick() {
             switch (randomComputerChoice) {
                 case '01d':
                     switch (weatherIcon) {
-                        case str.startsWith('01') || str.startsWith('02'):
+                        case weatherIcon.startsWith('01') || weatherIcon.startsWith('02'):
                             todayResult.innerHTML = equalIcon;
                             break;
-                        case str.startsWith('03') || str.startsWith('04') || str.startsWith('50'):
+                        case weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50'):
                             todayResult.innerHTML = winIcon;
                             break;
-                        case str.startsWith('09') || str.startsWith('10') || str.startsWith('13'):
+                        case weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13'):
                             todayResult.innerHTML = loseIcon;
                             break;
                     }
                     break;
                 case '03d':
                     switch (weatherIcon) {
-                        case str.startsWith('01') || str.startsWith('02'):
+                        case weatherIcon.startsWith('01') || weatherIcon.startsWith('02'):
                             todayResult.innerHTML = loseIcon;
                             break;
-                        case str.startsWith('03') || str.startsWith('04') || str.startsWith('50'):
+                        case weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50'):
                             todayResult.innerHTML = equalIcon;
                             break;
-                        case str.startsWith('09') || str.startsWith('10') || str.startsWith('13'):
+                        case weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13'):
                             todayResult.innerHTML = winIcon;
                             break;
                     }
                     break;
                 case '09d':
                     switch (weatherIcon) {
-                        case str.startsWith('01') || str.startsWith('02'):
+                        case weatherIcon.startsWith('01') || weatherIcon.startsWith('02'):
                             todayResult.innerHTML = winIcon;
                             break;
-                        case str.startsWith('03') || str.startsWith('04') || str.startsWith('50'):
+                        case weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50'):
                             todayResult.innerHTML = loseIcon;
                             break;
-                        case str.startsWith('09') || str.startsWith('10') || str.startsWith('13'):
+                        case weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13'):
                             todayResult.innerHTML = equalIcon;
                             break;
                     }
