@@ -28,6 +28,30 @@ h1  {
     background-color: #EF7B45;
     border: 5px, solid, black;
 } 
+/* User Choice Indication */
+.text-center {
+    text-align: center;
+}
+/* weather icons */
+#weather-icon img {
+    width: 100px;
+    height: 100px;
+}
+/* user choice indication for city and country */
+#user-choice {
+    display: flex;
+    flex-direction: row;
+    h3{
+        color:black;
+        }
+    align-items: center;
+    justify-content: flex-start;
+}
+/* Adjust as needed for spacing between label and city */
+#user-choice-label {
+    margin-right: 10px; 
+    display: flex;
+}
 
 
 footer {
