@@ -61,3 +61,24 @@ footer {
 .games-rules {
     width: 400px;
 }
+
+/* styling for result icons */
+.blue-circle {
+    padding: 0 5px;
+    background-color: #357DED;
+    border-radius: 50%;
+    width: 1.6em;
+    text-align: center;
+    color: #a4c4ef;
+    font-size: small;
+}
+
+.green-win {
+    color: green;
+    font-size: large;
+}
+
+.red-lose {
+    color: red;
+    font-size: large;
+}

@@ -30,16 +30,17 @@
             <input class="col-3 search" type="text" id="city-input" placeholder="Location: " spellcheck="false"
                 autocomplete="off" required>
             <!-- Country Pull Down-->
-            <select class="col-2" id="country-select">
+            <select class="col-2"  id="country-select">
+                <option value="GB">United Kingdom</option>
+                <option value="IE">Republic of Ireland</option>
                 <option value="AU">Australia</option>
                 <option value="NZ">New Zealand</option>
                 <option value="CA">Canada</option>
                 <option value="US">USA</option>
-                <option value="GB">UK</option>
             </select>
 
             <!-- First Name Entry-->
-            <input class="col-3 search" type="text" id="first-name"  placeholder="First Name: "  spellcheck="false" autocomplete="off" required> 
+            <input class="col-3 search" type="text" id="first-name"  placeholder="First Name: "  spellcheck="false" autocomplete="off"> 
             <!-- Country Pull Down-->
 
             <!-- Submit Button -->
@@ -55,6 +56,8 @@
             </div>
             <div id="weather-icon" class="ms-3">
             </div>
+            <!-- This is where the result icon will appear -->
+            <div id="today-result"></div>
             <div id="user-choice" class="col-3 text-center">
                 <h3 id="user-choice-label" class="mb-0">User Choice:</h3>
                 <h2 id="city-name" class="mb-0"></h2>
@@ -71,7 +74,7 @@
                     <h3>Day 2:</h3>
                     <p id="day2-temp">Temperature</p>
                     <div id="day2-weather-icon"></div>
-                    <p>Win or Lose SWR Symbol</p>
+                    <div id="day2-result"></div>
                 </div>
                 
                 <!-- Day 3 -->
@@ -79,7 +82,7 @@
                     <h3>Day 3:</h3>
                     <p id="day3-temp">Temperature</p>
                     <div id="day3-weather-icon"></div>
-                    <p>Win or Lose SWR Symbol</p>
+                    <div id="day3-result"></div>
                 </div>
                 
                 <!-- Day 4 -->
@@ -87,7 +90,7 @@
                     <h3>Day 4:</h3>
                     <p id="day4-temp">Temperature</p>
                     <div id="day4-weather-icon"></div>
-                    <p>Win or Lose SWR Symbol</p>
+                    <div id="day4-result"></div>
                 </div>
                 
                 <!-- Day 5 -->
@@ -95,7 +98,7 @@
                     <h3>Day 5:</h3>
                     <p id="day5-temp">Temperature</p>
                     <div id="day5-weather-icon"></div>
-                    <p>Win or Lose SWR Symbol</p>
+                    <div id="day5-result"></div>
                 </div>
                 
                 <!-- Day 6 -->
@@ -103,7 +106,7 @@
                     <h3>Day 6:</h3>
                     <p id="day6-temp">Temperature</p>
                     <div id="day6-weather-icon"></div>
-                    <p>Win or Lose SWR Symbol</p>
+                    <div id="day6-result"></div>
                 </div>
             </div>
             <!-- VS Marker-->

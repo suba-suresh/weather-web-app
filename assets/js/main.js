@@ -1,7 +1,13 @@
 const apiKey = "3c8a00c26dc56564f1e113f41e74b095";
 const units = "metric";
 const iconBaseUrl = "https://openweathermap.org/img/wn/";
+let randomComputerChoice = null;
 
+// variables needed for game results icons
+const todayResult = document.getElementById('today-result');
+const winIcon = '<i class="fa-solid fa-circle-check green-win"></i>';
+const loseIcon = '<i class="fa-solid fa-circle-xmark red-lose"></i>';
+const equalIcon = '<div class="blue-circle"><i class="fa-solid fa-equals"></i></div>';
   
 // functions that need to run before anything else
 makeComputerChoice();
@@ -53,10 +59,45 @@ function handleButtonClick() {
             cityNameElement.innerText = `${cityName}, ${countryCode}`;
             currTempElement.innerText = `Temperature: ${currentTemp}°C`;
             weatherIconElement.innerHTML = `<img src="${iconBaseUrl}${weatherIcon}@2x.png" alt="${weatherDescription}" />`;
+
+            // computer choice vs today result icon
+            switch (randomComputerChoice) {
+                case '01d':
+                    if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        todayResult.innerHTML = equalIcon;
+                    } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        todayResult.innerHTML = winIcon;
+                    } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        todayResult.innerHTML = loseIcon;
+                    }
+                    break;
+                case '03d':
+                    if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        todayResult.innerHTML = loseIcon;
+                    } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        todayResult.innerHTML = equalIcon;
+                    } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        todayResult.innerHTML = winIcon;
+                    }
+                    break;
+                case '09d':
+                    if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        todayResult.innerHTML = winIcon;
+                    } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        todayResult.innerHTML = loseIcon;
+                    } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        todayResult.innerHTML = equalIcon;
+                    }
+                    break;
+                default:
+                    console.log('computer choice is null');
+            }            
+
             cityInputElement.value = '';
             // Fetch five-day forecast after fetching current weather
             fetchFiveDayForecast(cityName, countryCode);
         })
+
         .catch(error => {
             console.error('Error fetching weather data:', error);
             alert('Error fetching weather data. Please try again later.');
@@ -67,14 +108,14 @@ function handleButtonClick() {
         });
 }
 
-/**wethaer forecast for next five days */
+/**weather forecast for next five days */
 function fetchFiveDayForecast(cityName, countryCode) {
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},${countryCode}&appid=${apiKey}&units=${units}`;
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            
+
             // Iterate over the forecast data to populate each day's weather
             for (let i = 7; i < 40; i += 8) {
                 const dayIndex = (i - 7) / 8 + 2; // Calculate day number dynamically
@@ -86,9 +127,44 @@ function fetchFiveDayForecast(cityName, countryCode) {
                 // Update corresponding day's elements
                 const dayTempElement = document.getElementById(`day${dayIndex}-temp`);
                 const dayWeatherIconElement = document.getElementById(`day${dayIndex}-weather-icon`);
+                const dayResult = document.getElementById(`day${dayIndex}-result`); // icon div
 
                 dayTempElement.innerText = `${currentTemp}°C`;
                 dayWeatherIconElement.innerHTML = `<img src="${currConditionImage}" alt="${currentCondition}" />`;
+
+                // computer choice vs forecast result icon
+                switch (randomComputerChoice) {
+                    case '01d':
+                        if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            dayResult.innerHTML = equalIcon;
+                        } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            dayResult.innerHTML = winIcon;
+                        } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            dayResult.innerHTML = loseIcon;
+                        }
+                        break;
+                    case '03d':
+                        if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            dayResult.innerHTML = loseIcon;
+                        } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            dayResult.innerHTML = equalIcon;
+                        } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            dayResult.innerHTML = winIcon;
+                        }
+                        break;
+                    case '09d':
+                        if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            dayResult.innerHTML = winIcon;
+                        } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            dayResult.innerHTML = loseIcon;
+                        } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            dayResult.innerHTML = equalIcon;
+                        }
+                        break;
+                    default:
+                        console.log('computer choice is null');
+                }            
+
             }
         })
         .catch(error => {
@@ -103,9 +179,8 @@ document.getElementById("next-round").addEventListener("click", function(event) 
   });
 /** Randomly pick a weather icon and display it in the 'weather to beat' section */
 function makeComputerChoice() {
-    const computerWeatherArr = ['01d','02d','03d','04d','09d','10d'];
-    const randomComputerChoice = computerWeatherArr[Math.floor(Math.random()*6)];
-    console.log(randomComputerChoice);
+    const computerWeatherArr = ['01d','03d','09d'];
+    randomComputerChoice = computerWeatherArr[Math.floor(Math.random()*3)];
     const computerChoiceImage = `https://openweathermap.org/img/wn/${randomComputerChoice}@4x.png`;
     // document.getElementById('computer-default').classList.add("hidden");
     document.getElementById('computer-choice').innerHTML = `<img src="${computerChoiceImage}">`;
