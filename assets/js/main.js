@@ -108,7 +108,7 @@ function handleButtonClick() {
         });
 }
 
-/**wethaer forecast for next five days */
+/**weather forecast for next five days */
 function fetchFiveDayForecast(cityName, countryCode) {
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},${countryCode}&appid=${apiKey}&units=${units}`;
 
@@ -116,6 +116,12 @@ function fetchFiveDayForecast(cityName, countryCode) {
         .then(response => response.json())
         .then(data => {
             
+             // variables needed for game results icons
+             const todayResult = document.getElementById('today-result');
+             const winIcon = '<i class="fa-solid fa-circle-check green-win"></i>';
+             const loseIcon = '<i class="fa-solid fa-circle-xmark red-lose"></i>';
+             const equalIcon = '<div class="blue-circle"><i class="fa-solid fa-equals"></i></div>';
+
             // Iterate over the forecast data to populate each day's weather
             for (let i = 7; i < 40; i += 8) {
                 const dayIndex = (i - 7) / 8 + 2; // Calculate day number dynamically
@@ -127,9 +133,44 @@ function fetchFiveDayForecast(cityName, countryCode) {
                 // Update corresponding day's elements
                 const dayTempElement = document.getElementById(`day${dayIndex}-temp`);
                 const dayWeatherIconElement = document.getElementById(`day${dayIndex}-weather-icon`);
+                const dayResult = document.getElementById(`day${dayIndex}-result`); // icon div
 
                 dayTempElement.innerText = `${currentTemp}°C`;
                 dayWeatherIconElement.innerHTML = `<img src="${currConditionImage}" alt="${currentCondition}" />`;
+
+                // computer choice vs forecast result icon
+                switch (randomComputerChoice) {
+                    case '01d':
+                        if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            dayResult.innerHTML = equalIcon;
+                        } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            dayResult.innerHTML = winIcon;
+                        } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            dayResult.innerHTML = loseIcon;
+                        }
+                        break;
+                    case '03d':
+                        if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            dayResult.innerHTML = loseIcon;
+                        } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            dayResult.innerHTML = equalIcon;
+                        } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            dayResult.innerHTML = winIcon;
+                        }
+                        break;
+                    case '09d':
+                        if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            dayResult.innerHTML = winIcon;
+                        } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            dayResult.innerHTML = loseIcon;
+                        } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            dayResult.innerHTML = equalIcon;
+                        }
+                        break;
+                    default:
+                        console.log('computer choice is null');
+                }            
+
             }
         })
         .catch(error => {

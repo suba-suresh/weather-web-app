@@ -67,7 +67,8 @@ footer {
     padding: 0 5px;
     background-color: #357DED;
     border-radius: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    width: 1.6em;
 }
 
 .green-win {
