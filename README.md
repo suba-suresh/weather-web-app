@@ -8,6 +8,7 @@ Sun Clouds Rain is a site that is targetted towards chiildren to look up the wea
 * [User Experience (UX)](#user-experience-ux) 
 * [Features](#features)
 * [Design](#design)
+* [Project Management](#project-management)
 * [Technologies Used](#technologies-used)
 * [Testing](#testing)
 * [Deployment](#deployment)
@@ -51,14 +52,31 @@ An ideation process was undertaken to suggest and prioritise the user experience
   
 ## Features 
 
-### Existing Features
+### Features Completed
 
-- __Navigation Bar__
-
-  - Featured on all three pages, the full responsive navigation bar includes links to the Home page, Case Studies, Resources, and Advice page and is identical in each page to allow for easy navigation.
-  - This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
+- __Landing Page__
+  - The site consists of a single landing page which clearly identifies the purpose of the site, is responsive and allows the user to enter their location and get a Weather Forecast.  On first entering the site a large banner is shown in the midle of the screen to explain it.  This banner is removed once the user enters a location and requests a weather forecast.  It is replaced with the Sun Clouds Rain scoring statement.
 
 ![Nav Bar](documentation/screenshots/header.png)
+
+- __Capture Location for Weather__
+
+  - The site has a clearly marked input field for the user to enter the location for the weather forecast.  A country pull down is also included, to help resolve any issues with identical location names in different countries.  At this stage only a limited number of countries have been added and future work is needed to increase the country coverage. 
+
+- __Capture First name for Sun Clouds Rain Game__
+
+  - The site has a clearly marked input field for the user to enter theor first name.  Which is then used as Part of the Sun Clouds Rain game to tailer the messaging.
+
+- __Submit Location for Weather Forecast__
+
+  - The site has a clearly marked submit button - to submit the location and get a Weather Forecast.  This button also submits the first name for the first round of the Sun Clouds Rain game.
+  - When this button is clicked - the orange information banner is also removed from the screen and replace with the scoring statement for the Sun Clouds Rain Game.
+
+- __Confirmation of Location__
+
+  - FThe  
+
+
 
 - __Principles and Objectives Section__
 
@@ -145,6 +163,22 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
         ![Yu resources and advice](documentation/wireframes/wireframe3.png)
 
+
+## Project Management
+
+An ideation process was undertaken to suggest and prioritise the user experience for the site.  From this user stories were generated, prioritised (including establishing a Minimum Viable Product) and managed using a Kanban board on GitHub.
+
+Each user story:
+  - Included Acceptance Criteria and Tasks.
+  - Was tagged with its MoSCoW priority rating.
+  - Was assigned an owner.
+  - Was managed by the owner across to Done
+
+The Kanban board was regulalry reviewed bu the team.
+
+-   [Kanban Board](https://github.com/users/suba-suresh/projects/2)
+
+
 ## Technologies Used
 
 ### Languages Used
@@ -173,7 +207,7 @@ An ideation process was undertaken to suggest and prioritise the user experience
   - 4 errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmarkchips.github.io%2Fprevent-awareness%2Findex.html)
 - CSS
   - 1 error was found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmarkchips.github.io%2Fprevent-awareness%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-- HTML
+- JavaScript
 
 ### Unfixed Bugs
 
