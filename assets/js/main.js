@@ -41,60 +41,48 @@ function handleButtonClick() {
 
             // variables needed for game results icons
             const todayResult = document.getElementById('today-result');
-            const winIcon = '<i class="fa-solid fa-circle-check"></i>';
-            const loseIcon = '<i class="fa-solid fa-circle-xmark"></i>';
-            const equalIcon = '<i class="fa-solid fa-equals"></i>';
+            const winIcon = '<i class="fa-solid fa-circle-check green-win"></i>';
+            const loseIcon = '<i class="fa-solid fa-circle-xmark red-lose"></i>';
+            const equalIcon = '<div class="blue-circle"><i class="fa-solid fa-equals"></i></div>';
 
             cityNameElement.innerText = `${cityName}, ${countryCode}`;
             currTempElement.innerText = `Temperature: ${currentTemp}°C`;
             weatherIconElement.innerHTML = `<img src="${iconBaseUrl}${weatherIcon}@2x.png" alt="${weatherDescription}" />`;
 
-            cityInputElement.value = '';
-
             // computer choice vs today result icon
             switch (randomComputerChoice) {
                 case '01d':
-                    switch (weatherIcon) {
-                        case weatherIcon.startsWith('01') || weatherIcon.startsWith('02'):
-                            todayResult.innerHTML = equalIcon;
-                            break;
-                        case weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50'):
-                            todayResult.innerHTML = winIcon;
-                            break;
-                        case weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13'):
-                            todayResult.innerHTML = loseIcon;
-                            break;
+                    if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        todayResult.innerHTML = equalIcon;
+                    } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        todayResult.innerHTML = winIcon;
+                    } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        todayResult.innerHTML = loseIcon;
                     }
                     break;
                 case '03d':
-                    switch (weatherIcon) {
-                        case weatherIcon.startsWith('01') || weatherIcon.startsWith('02'):
-                            todayResult.innerHTML = loseIcon;
-                            break;
-                        case weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50'):
-                            todayResult.innerHTML = equalIcon;
-                            break;
-                        case weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13'):
-                            todayResult.innerHTML = winIcon;
-                            break;
+                    if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        todayResult.innerHTML = loseIcon;
+                    } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        todayResult.innerHTML = equalIcon;
+                    } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        todayResult.innerHTML = winIcon;
                     }
                     break;
                 case '09d':
-                    switch (weatherIcon) {
-                        case weatherIcon.startsWith('01') || weatherIcon.startsWith('02'):
-                            todayResult.innerHTML = winIcon;
-                            break;
-                        case weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50'):
-                            todayResult.innerHTML = loseIcon;
-                            break;
-                        case weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13'):
-                            todayResult.innerHTML = equalIcon;
-                            break;
+                    if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        todayResult.innerHTML = winIcon;
+                    } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        todayResult.innerHTML = loseIcon;
+                    } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        todayResult.innerHTML = equalIcon;
                     }
                     break;
                 default:
                     console.log('computer choice is null');
-            }
+            }            
+
+            cityInputElement.value = '';
         })
 
         .catch(error => {
