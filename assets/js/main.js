@@ -8,6 +8,10 @@ const todayResult = document.getElementById('today-result');
 const winIcon = '<i class="fa-solid fa-circle-check green-win"></i>';
 const loseIcon = '<i class="fa-solid fa-circle-xmark red-lose"></i>';
 const equalIcon = '<div class="blue-circle"><i class="fa-solid fa-equals"></i></div>';
+
+// score results
+let userScore = 0;
+let computerScore = 0;
   
 // functions that need to run before anything else
 makeComputerChoice();
@@ -46,6 +50,9 @@ function handleButtonClick() {
     const countryCode = countrySelectElement.value;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid=${apiKey}&units=${units}`;
 
+    userScore = 0;
+    computerScore = 0;
+
     console.log('Fetching weather data from URL:', url); 
 
     fetch(url)
@@ -66,24 +73,30 @@ function handleButtonClick() {
                     if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
                         todayResult.innerHTML = equalIcon;
                     } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        ++userScore;
                         todayResult.innerHTML = winIcon;
                     } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        ++computerScore;
                         todayResult.innerHTML = loseIcon;
                     }
                     break;
                 case '03d':
                     if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        ++computerScore;
                         todayResult.innerHTML = loseIcon;
                     } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
                         todayResult.innerHTML = equalIcon;
                     } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                        ++userScore;
                         todayResult.innerHTML = winIcon;
                     }
                     break;
                 case '09d':
                     if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
+                        ++userScore;
                         todayResult.innerHTML = winIcon;
                     } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                        ++computerScore;
                         todayResult.innerHTML = loseIcon;
                     } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
                         todayResult.innerHTML = equalIcon;
@@ -91,20 +104,20 @@ function handleButtonClick() {
                     break;
                 default:
                     console.log('computer choice is null');
-            }            
-
+            }     
+        
             cityInputElement.value = '';
             // Fetch five-day forecast after fetching current weather
             fetchFiveDayForecast(cityName, countryCode);
         })
+
+        resultMessage()
 
         .catch(error => {
             console.error('Error fetching weather data:', error);
             alert('Error fetching weather data. Please try again later.');
 
             cityInputElement.value = '';
-
-            
         });
 }
 
@@ -138,24 +151,30 @@ function fetchFiveDayForecast(cityName, countryCode) {
                         if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
                             dayResult.innerHTML = equalIcon;
                         } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            ++userScore;
                             dayResult.innerHTML = winIcon;
                         } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            ++computerScore;
                             dayResult.innerHTML = loseIcon;
                         }
                         break;
                     case '03d':
                         if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            ++computerScore;
                             dayResult.innerHTML = loseIcon;
                         } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
                             dayResult.innerHTML = equalIcon;
                         } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                            ++userScore;
                             dayResult.innerHTML = winIcon;
                         }
                         break;
                     case '09d':
                         if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
+                            ++userScore;
                             dayResult.innerHTML = winIcon;
                         } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                            ++computerScore;
                             dayResult.innerHTML = loseIcon;
                         } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
                             dayResult.innerHTML = equalIcon;
@@ -164,7 +183,6 @@ function fetchFiveDayForecast(cityName, countryCode) {
                     default:
                         console.log('computer choice is null');
                 }            
-
             }
         })
         .catch(error => {
@@ -186,6 +204,13 @@ function makeComputerChoice() {
     document.getElementById('computer-choice').innerHTML = `<img src="${computerChoiceImage}">`;
 }
 
+/** add wins of user and computer, then determine who has won, and display results */
+function resultMessage() {
+    // results message
+    const resultTally = document.getElementById('result-tally');
+    const winnerMessage = document.getElementById('winner-message');
+    resultTally.innerHTML = `<h2>You - ${userScore}/6, Computer - ${computerScore}/6, which means:</h2>`;
+}
 
 // hide score at start of game
 function hideScore() {
