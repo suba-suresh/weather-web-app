@@ -22,13 +22,21 @@ const currTempElement = document.getElementById("curr-temp");
 const weatherIconElement = document.getElementById("weather-icon");
 const cityInputElement = document.getElementById("city-input");
 const countrySelectElement = document.getElementById("country-select");
+
+// variables needed for entering user name
 const firstNameElement = document.getElementById("first-name");
+const userChoiceLabel = document.getElementById('user-choice-label');
+
 const submitButtonElement = document.getElementById("submit-button");
 
 // submit button event listener
 const formElement = document.querySelector('form');
 formElement.addEventListener('submit', function(event) {
     event.preventDefault(); 
+    // replace user with name
+    if (firstNameElement.value !== "") {
+        userChoiceLabel.innerText = `${firstNameElement.value}'s choice:`
+    }
     handleButtonClick();
     hideBanner();
 });
@@ -51,12 +59,6 @@ function handleButtonClick() {
             const currentTemp = data.main.temp;
             const weatherDescription = data.weather[0].description;
             const weatherIcon = data.weather[0].icon;
-
-            // replace user with name
-            const userChoiceLabel = document.getElementById('user-choice-label');
-            if (firstNameElement.value !== "") {
-                userChoiceLabel.innerText = `${firstNameElement.value}'s choice:`
-            }
 
             cityNameElement.innerText = `${cityName}, ${countryCode}`;
             currTempElement.innerText = `Temperature: ${currentTemp}°C`;
@@ -204,7 +206,13 @@ function resultMessage() {
     // results message
     const resultTally = document.getElementById('result-tally');
     const winnerMessage = document.getElementById('winner-message');
-    resultTally.innerHTML = `<h2>You won ${userScore}/6, Computer won ${computerScore}/6:</h2>`;
+
+    if (firstNameElement.value !== "") {
+        userChoiceLabel.innerText = `${firstNameElement.value}'s choice:`
+        resultTally.innerHTML = `<h2>${firstNameElement.value} won ${userScore}/6, Computer won ${computerScore}/6:</h2>`;
+    } else {
+        resultTally.innerText = `You won ${userScore}/6, Computer won ${computerScore}/6:`;
+    }
     // Determine the winner and set the appropriate message
     let message;
     if (userScore > computerScore) {
@@ -215,7 +223,7 @@ function resultMessage() {
         message = "It's a tie!";
     }
     // winner message
-    winnerMessage.innerHTML = `<h2 class="ps-4">${message}</h2>`;
+    winnerMessage.innerText = `${message}`;
 }
 
 // hide score at start of game
