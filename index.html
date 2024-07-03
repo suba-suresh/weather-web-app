@@ -49,16 +49,15 @@
 
         <!-- User Choice Indication -->
         <br><br>
-        <div id="user-choice" class="d-flex align-items-center">
-            <div>
+        <!-- User Choice Indication -->
+        <div id="user-choice" class="d-flex align-items-center flex-column flex-md-row mt-4">
+            <div class="text-center">
                 <h3>Today:</h3>
                 <p id="curr-temp" class="mb-0"></p>
+                <div id="weather-icon" class="text-center"></div>
+                <div id="today-result" class="text-center mt-2 mt-md-0"></div>
             </div>
-            <div id="weather-icon" class="ms-3">
-            </div>
-            <!-- This is where the result icon will appear -->
-            <div id="today-result"></div>
-            <div id="user-choice" class="col-3 text-center">
+            <div id="user-choice" class="text-center ms-md-3">
                 <h3 id="user-choice-label" class="mb-0">User Choice:</h3>
                 <h2 id="city-name" class="mb-0"></h2>
             </div>
@@ -68,13 +67,16 @@
         <section class="row">
 
             <!-- Five-Day Forecast -->
-            <div id="five-day-forecast" class="col-5 row g-0">
+            <div id="five-day-forecast" class="col-12 col-md-7 row g-3">
                 <!-- Day 2 -->
                 <div class="col">
                     <h3>Day 2:</h3>
                     <p id="day2-temp">Temperature</p>
                     <div id="day2-weather-icon"></div>
-                    <div id="day2-result"></div>
+                    <div id="day2-result" class="result-icon"></div>
+                    <div class="bluecircle">
+                        
+                    </div>
                 </div>
                 
                 <!-- Day 3 -->
@@ -82,7 +84,7 @@
                     <h3>Day 3:</h3>
                     <p id="day3-temp">Temperature</p>
                     <div id="day3-weather-icon"></div>
-                    <div id="day3-result"></div>
+                    <div id="day3-result" class="result-icon"></div>
                 </div>
                 
                 <!-- Day 4 -->
@@ -90,7 +92,7 @@
                     <h3>Day 4:</h3>
                     <p id="day4-temp">Temperature</p>
                     <div id="day4-weather-icon"></div>
-                    <div id="day4-result"></div>
+                    <div id="day4-result" class="result-icon"></div>
                 </div>
                 
                 <!-- Day 5 -->
@@ -98,7 +100,7 @@
                     <h3>Day 5:</h3>
                     <p id="day5-temp">Temperature</p>
                     <div id="day5-weather-icon"></div>
-                    <div id="day5-result"></div>
+                    <div id="day5-result" class="result-icon"></div>
                 </div>
                 
                 <!-- Day 6 -->
@@ -106,15 +108,15 @@
                     <h3>Day 6:</h3>
                     <p id="day6-temp">Temperature</p>
                     <div id="day6-weather-icon"></div>
-                    <div id="day6-result"></div>
+                    <div id="day6-result" class="result-icon"></div>
                 </div>
             </div>
             <!-- VS Marker-->
-            <div class="col-2">
+            <div class="col-12 col-md-2 text-center mt-3 mt-md-0">
                 <h2>VS</h2>
             </div>
             <!-- Computer Game Weather-->
-            <div class="col-3">
+            <div class="col-12 col-md-3 text-center">
                 <h3>The Weather to Beat:</h3>
                 <div id="computer-choice">
                     <p id="computer-default" class="">?</p>
@@ -123,28 +125,27 @@
         </section>
 
         <!-- Initial Game Banner (To Hide When Game Starts)-->
-        <section class="game-banner" id="welcome-banner">
+        <section class="game-banner text-center mt-4" id="welcome-banner">
             <p>Welcome to Sun, Clouds, Rain.</p>
             <p>Rock, paper, scissors, but for weather.</p>
             <p>To start a new game, begin by searching for a location.</p>
         </section>
 
         <!-- Game Score-->
-        <section id="show-score">
+        <section id="show-score"class="text-center mt-4">
             <br><br>
             <h2>You - "your score", Computer - "your score" : You/Computer Wins!</h2><br><br>
         </section>
 
     </main>
 
-    <footer class="container-fluid py-2">
+    <footer class="container-fluid py-2 mt-4">
         <div class="row d-flex justify-content-around">
             <!-- How to Play Button and Modal-->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary col-2 blue-button-color" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary col-2 blue-button-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 How to play
-            </button>
+                </button>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
