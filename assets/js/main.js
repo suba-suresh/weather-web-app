@@ -1,7 +1,7 @@
 const apiKey = "3c8a00c26dc56564f1e113f41e74b095";
 const units = "metric";
 const iconBaseUrl = "https://openweathermap.org/img/wn/";
-
+let randomComputerChoice = null;
   
 // functions that need to run before anything else
 makeComputerChoice();
@@ -14,7 +14,6 @@ const cityInputElement = document.getElementById("city-input");
 const countrySelectElement = document.getElementById("country-select");
 const firstNameElement = document.getElementById("first-name");
 const submitButtonElement = document.getElementById("submit-button");
-const randomComputerChoice = null;
 
 const formElement = document.querySelector('form');
 formElement.addEventListener('submit', function(event) {
@@ -40,19 +39,69 @@ function handleButtonClick() {
             const weatherDescription = data.weather[0].description;
             const weatherIcon = data.weather[0].icon;
 
+            const todayResult = document.getElementById('today-result');
+            const winIcon = '<i class="fa-solid fa-circle-check"></i>';
+            const loseIcon = '<i class="fa-solid fa-circle-xmark"></i>';
+            const equalIcon = '<i class="fa-solid fa-equals"></i>';
+
             cityNameElement.innerText = `${cityName}, ${countryCode}`;
             currTempElement.innerText = `Temperature: ${currentTemp}°C`;
             weatherIconElement.innerHTML = `<img src="${iconBaseUrl}${weatherIcon}@2x.png" alt="${weatherDescription}" />`;
 
             cityInputElement.value = '';
+
+            // computer choice vs today result icon
+            switch (randomComputerChoice) {
+                case '01d':
+                    switch (weatherIcon) {
+                        case str.startsWith('01') || str.startsWith('02'):
+                            todayResult.innerHTML = equalIcon;
+                            break;
+                        case str.startsWith('03') || str.startsWith('04') || str.startsWith('50'):
+                            todayResult.innerHTML = winIcon;
+                            break;
+                        case str.startsWith('09') || str.startsWith('10') || str.startsWith('13'):
+                            todayResult.innerHTML = loseIcon;
+                            break;
+                    }
+                    break;
+                case '03d':
+                    switch (weatherIcon) {
+                        case str.startsWith('01') || str.startsWith('02'):
+                            todayResult.innerHTML = loseIcon;
+                            break;
+                        case str.startsWith('03') || str.startsWith('04') || str.startsWith('50'):
+                            todayResult.innerHTML = equalIcon;
+                            break;
+                        case str.startsWith('09') || str.startsWith('10') || str.startsWith('13'):
+                            todayResult.innerHTML = winIcon;
+                            break;
+                    }
+                    break;
+                case '09d':
+                    switch (weatherIcon) {
+                        case str.startsWith('01') || str.startsWith('02'):
+                            todayResult.innerHTML = winIcon;
+                            break;
+                        case str.startsWith('03') || str.startsWith('04') || str.startsWith('50'):
+                            todayResult.innerHTML = loseIcon;
+                            break;
+                        case str.startsWith('09') || str.startsWith('10') || str.startsWith('13'):
+                            todayResult.innerHTML = equalIcon;
+                            break;
+                    }
+                    break;
+                default:
+                    console.log('computer choice is null');
+            }
         })
+
         .catch(error => {
             console.error('Error fetching weather data:', error);
             alert('Error fetching weather data. Please try again later.');
 
             cityInputElement.value = '';
         });
-        
 }
 
 // next round button event listener
