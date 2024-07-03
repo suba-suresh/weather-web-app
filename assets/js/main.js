@@ -25,7 +25,7 @@ const countrySelectElement = document.getElementById("country-select");
 const firstNameElement = document.getElementById("first-name");
 const submitButtonElement = document.getElementById("submit-button");
 
-
+// submit button event listener
 const formElement = document.querySelector('form');
 formElement.addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -33,6 +33,7 @@ formElement.addEventListener('submit', function(event) {
     hideBanner();
 });
 
+/** fetch request for today's weather */
 function handleButtonClick() {
     const cityName = cityInputElement.value;
     const countryCode = countrySelectElement.value;
@@ -98,8 +99,6 @@ function handleButtonClick() {
             // Fetch five-day forecast after fetching current weather
             fetchFiveDayForecast(cityName, countryCode);
         })
-
-        // resultMessage()
 
         .catch(error => {
             console.error('Error fetching weather data:', error);
@@ -172,7 +171,9 @@ function fetchFiveDayForecast(cityName, countryCode) {
                         console.log('computer choice is null');
                 }            
             }
+            resultMessage();
         })
+
         .catch(error => {
             console.error('Error fetching five-day forecast:', error);
         });
