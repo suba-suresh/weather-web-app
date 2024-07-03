@@ -2,6 +2,12 @@ const apiKey = "3c8a00c26dc56564f1e113f41e74b095";
 const units = "metric";
 const iconBaseUrl = "https://openweathermap.org/img/wn/";
 let randomComputerChoice = null;
+
+// variables needed for game results icons
+const todayResult = document.getElementById('today-result');
+const winIcon = '<i class="fa-solid fa-circle-check green-win"></i>';
+const loseIcon = '<i class="fa-solid fa-circle-xmark red-lose"></i>';
+const equalIcon = '<div class="blue-circle"><i class="fa-solid fa-equals"></i></div>';
   
 // functions that need to run before anything else
 makeComputerChoice();
@@ -49,12 +55,6 @@ function handleButtonClick() {
             const currentTemp = data.main.temp;
             const weatherDescription = data.weather[0].description;
             const weatherIcon = data.weather[0].icon;
-
-            // variables needed for game results icons
-            const todayResult = document.getElementById('today-result');
-            const winIcon = '<i class="fa-solid fa-circle-check green-win"></i>';
-            const loseIcon = '<i class="fa-solid fa-circle-xmark red-lose"></i>';
-            const equalIcon = '<div class="blue-circle"><i class="fa-solid fa-equals"></i></div>';
 
             cityNameElement.innerText = `${cityName}, ${countryCode}`;
             currTempElement.innerText = `Temperature: ${currentTemp}°C`;
@@ -115,12 +115,6 @@ function fetchFiveDayForecast(cityName, countryCode) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            
-             // variables needed for game results icons
-             const todayResult = document.getElementById('today-result');
-             const winIcon = '<i class="fa-solid fa-circle-check green-win"></i>';
-             const loseIcon = '<i class="fa-solid fa-circle-xmark red-lose"></i>';
-             const equalIcon = '<div class="blue-circle"><i class="fa-solid fa-equals"></i></div>';
 
             // Iterate over the forecast data to populate each day's weather
             for (let i = 7; i < 40; i += 8) {
