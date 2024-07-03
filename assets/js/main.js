@@ -52,6 +52,12 @@ function handleButtonClick() {
             const weatherDescription = data.weather[0].description;
             const weatherIcon = data.weather[0].icon;
 
+            // replace user with name
+            const userChoiceLabel = document.getElementById('user-choice-label');
+            if (firstNameElement.value !== "") {
+                userChoiceLabel.innerText = `${firstNameElement.value}'s choice:`
+            }
+
             cityNameElement.innerText = `${cityName}, ${countryCode}`;
             currTempElement.innerText = `Temperature: ${currentTemp}°C`;
             weatherIconElement.innerHTML = `<img src="${iconBaseUrl}${weatherIcon}@2x.png" alt="${weatherDescription}" />`;

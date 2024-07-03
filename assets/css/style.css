@@ -17,6 +17,10 @@ h1 {
     font-style: normal;
 }
 
+#vs {
+    font-family: "Margarine", sans-serif;
+}
+
 #result-tally,
 #winner-message {
     font-family: "Margarine", sans-serif;
