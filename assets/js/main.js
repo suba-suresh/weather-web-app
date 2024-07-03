@@ -24,18 +24,6 @@ const cityInputElement = document.getElementById("city-input");
 const countrySelectElement = document.getElementById("country-select");
 const firstNameElement = document.getElementById("first-name");
 const submitButtonElement = document.getElementById("submit-button");
-// IDs for five-day forecast elements
-const fiveDayForecastElement = document.getElementById("five-day-forecast")
-const day2TempElement = document.getElementById("day2-temp");
-const day2WeatherIconElement = document.getElementById("day2-weather-icon");
-const day3TempElement = document.getElementById("day3-temp");
-const day3WeatherIconElement = document.getElementById("day3-weather-icon");
-const day4TempElement = document.getElementById("day4-temp");
-const day4WeatherIconElement = document.getElementById("day4-weather-icon");
-const day5TempElement = document.getElementById("day5-temp");
-const day5WeatherIconElement = document.getElementById("day5-weather-icon");
-const day6TempElement = document.getElementById("day6-temp");
-const day6WeatherIconElement = document.getElementById("day6-weather-icon");
 
 
 const formElement = document.querySelector('form');
@@ -111,7 +99,7 @@ function handleButtonClick() {
             fetchFiveDayForecast(cityName, countryCode);
         })
 
-        resultMessage()
+        // resultMessage()
 
         .catch(error => {
             console.error('Error fetching weather data:', error);
