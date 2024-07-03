@@ -14,6 +14,7 @@ const cityInputElement = document.getElementById("city-input");
 const countrySelectElement = document.getElementById("country-select");
 const firstNameElement = document.getElementById("first-name");
 const submitButtonElement = document.getElementById("submit-button");
+const randomComputerChoice = null;
 
 const formElement = document.querySelector('form');
 formElement.addEventListener('submit', function(event) {
@@ -51,6 +52,7 @@ function handleButtonClick() {
 
             cityInputElement.value = '';
         });
+        
 }
 
 // next round button event listener
@@ -60,9 +62,8 @@ document.getElementById("next-round").addEventListener("click", function(event) 
   });
 /** Randomly pick a weather icon and display it in the 'weather to beat' section */
 function makeComputerChoice() {
-    const computerWeatherArr = ['01d','02d','03d','04d','09d','10d'];
-    const randomComputerChoice = computerWeatherArr[Math.floor(Math.random()*6)];
-    console.log(randomComputerChoice);
+    const computerWeatherArr = ['01d','03d','09d'];
+    randomComputerChoice = computerWeatherArr[Math.floor(Math.random()*3)];
     const computerChoiceImage = `https://openweathermap.org/img/wn/${randomComputerChoice}@4x.png`;
     // document.getElementById('computer-default').classList.add("hidden");
     document.getElementById('computer-choice').innerHTML = `<img src="${computerChoiceImage}">`;
