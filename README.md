@@ -185,7 +185,7 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
       [Link to Kanban Board](https://github.com/users/suba-suresh/projects/2)
 
-- The Weather MVP and Sun Cloud Rain Game MVP user stories were completed.  In additiona - some of the Weather and some of the Sun Cloud Rain Game enhancement user stories were completed.
+- The Weather MVP and Sun Cloud Rain Game MVP user stories were completed.  In addition - some of the Weather and some of the Sun Cloud Rain Game enhancement user stories were completed.
 
 ## Technologies Used
 
