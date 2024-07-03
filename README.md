@@ -1,6 +1,6 @@
 # Sun Clouds Rain
 
-Sun Clouds Rain is a site that is targetted towards chiildren to look up the weather for a given location - with the current day and a further 5 days weather forecast shown for the location entered.  The experience also includes a game Sun Clouds Rain, which is similar to Rock Paper Scisssors but using the Weather.  The computer picks some random Weather, which is then compared against each of the six days of weather shown and a winner is shown.
+Sun Clouds Rain is a site that is targetted towards chiildren to look up the weather for a given location - with the current day and a further 5 days weather forecast shown for the location entered.  The experience also includes a game Sun Clouds Rain, which is similar to Rock Paper Scisssors but using the Weather.  The computer picks some random Weather, which is then compared against each of the six days of weather shown and a winner is identified and shown.
 
 ![Responsive Mockup](./assets/suppdocs/SunCloudsRain.pdf)
 
@@ -117,29 +117,38 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
 ### Features Left to Implement
 
-- Resources: external links to other organizations prevent workshops
-	- It would be helpful to allow users to find other useful workshops about prevent such as online courses.
-- Advice section: how to talk to your potential extremist friend
-	- Not every case needs police intervention. Before contacting the police it is important to assess how extreme your friend is. It may also be possible to help deradicalise them if you have the correct approach. This section would attempt to answer these issues.
-- Links to sections within the page
-	- If we get to a point where our website involves a lot of scrolling, it may be worthwhile adding internal links to segments of the page.
-- Resources: community initiatives
-	- If after viewing our website a user would like to help stop extremism, we would include links to respectable community initiatives that band together to do just that.
+- Countries: an initial 5 countris have been added for the country validation activity.
+	- This list to be extnded to cover a wider range of countries.
+  - Investigate better use of the existing API to facilitate this.
+
+- Display of Weather Location on a Map
+	- It would be good to show a Google Map (or similar) of the location entered for the weather to help validate the weather is for the location expected.
+  - Investigate how the goggle maps API could be used to provide this.
+
+- Show day and dates against forecast
+	- It would help the users understanding of the weather to see the day name and date against each days forecast.
   
+- Multiple round scoring
+  - To encourage repeated use of the site, add an ongoing score capability that extemds the scoring across multiple rounds.
+
+
 ## Design
 
+-   ### Single Page
+    -  We agreed that the site should be based on using a single page. Using JavaScript to change the display based on user entry.  A bootstrap modal was used to display the rule.
+
 -   ### Colour Scheme
-    -  We agreed that a couple dark colours mixed with bright colours would work for our website. Including red was important to convey the danger of terrorism. The colours picked were generated the website [Coolors](https://coolors.co/)
+    -  We agreed that blue colours (clouds) mixed with bright (wetaher) colours would work for our website. Including blue was important to underpin the link to weather. The colours picked were generated the website [Coolors](https://coolors.co/)
 
         ![Colour Palette](documentation/colour-palette/colourpalette.png)
 
 -   ### Typography
-    - Google Fonts were used to import Roboto condensed and Roboto fonts into styles.css.  These were chosen as they incorporate a lot of straight thick lines which comes across as oppressive. The fonts were tested for their effectiveness by how they made the word 'terrorism' look.
+    - Google Fonts were used to import Caveat and Maragrine fonts into styles.css.  These were chosen as they looked informal and related to the use of the site by children.
  
     ![Font Pairing](documentation/font-family/font-pair.png)   
 
 -   ### Logo/Icon
-    - The logo design incorporates a shield and binoculars. The shield because Prevent seeks to protect, and binoculars because Prevent needs to look closely to spot signs of radicalisation. The logo was generated using [bing copilot designer](https://www.bing.com/chat?q=Microsoft+Copilot&FORM=hpcodx)
+    - The logo design incorporates a smiling sun character image. This to reflect weather, the focus on younger users and creating fun from the game. The logo was generated using [bing copilot designer](https://www.bing.com/chat?q=Microsoft+Copilot&FORM=hpcodx)
  
 	![Logo](assets/favicon/android-chrome-192x192.png)
 
