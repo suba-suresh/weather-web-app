@@ -48,7 +48,7 @@
         </form>
 
         <!-- User Choice Indication -->
-        <br><br>
+        <br>
         <div id="user-choice" class="d-flex align-items-center">
             <div>
                 <h3>Today:</h3>
@@ -59,7 +59,7 @@
             <!-- This is where the result icon will appear -->
             <div id="today-result"></div>
             <div id="user-choice" class="col-3 text-center">
-                <h3 id="user-choice-label" class="mb-0">User Choice:</h3>
+                <h3 id="user-choice-label" class="mb-0 ps-4">User Choice:</h3>
                 <h2 id="city-name" class="mb-0"></h2>
             </div>
         </div>
@@ -110,8 +110,8 @@
                 </div>
             </div>
             <!-- VS Marker-->
-            <div class="col-2">
-                <h2>VS</h2>
+            <div class="col-2" id="vs">
+                <h2 class="fs-1">VS</h2>
             </div>
             <!-- Computer Game Weather-->
             <div class="col-3">
@@ -130,9 +130,10 @@
         </section>
 
         <!-- Game Score-->
-        <section id="show-score">
+        <section class="d-flex pb-4" id="show-score">
             <br><br>
-            <h2>You - "your score", Computer - "your score" : You/Computer Wins!</h2><br><br>
+            <h2 id="result-tally"></h2>
+            <h2 class="ps-4" id="winner-message"></h2>
         </section>
 
     </main>
@@ -171,7 +172,7 @@
                                 <li>sun > rain > clouds > sun</li>
                                 <li>sun = clear sky or few clouds</li>
                                 <li>clouds = scattered clouds, broken clouds, mist</li>
-                                <li>rain = shower rain, rain, thunderstorm, snow</li>
+                                <li>rain = shower rain, rain, snow</li>
                             </ul>
                         </div>
                         <div class="modal-footer">
