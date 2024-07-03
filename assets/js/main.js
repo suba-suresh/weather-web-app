@@ -12,6 +12,7 @@ const currTempElement = document.getElementById("curr-temp");
 const weatherIconElement = document.getElementById("weather-icon");
 const cityInputElement = document.getElementById("city-input");
 const countrySelectElement = document.getElementById("country-select");
+const firstNameElement = document.getElementById("first-name");
 const submitButtonElement = document.getElementById("submit-button");
 // IDs for five-day forecast elements
 const fiveDayForecastElement = document.getElementById("five-day-forecast")
