@@ -5,7 +5,6 @@
 body {
     background-color: #A4C4EF;
     font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
@@ -35,7 +34,7 @@ h1 {
     font-size: 2rem;
     width: 600px;
     background-color: #EF7B45;
-    border: 5px, solid, black;
+    border: 5px solid black;
 }
 
 /* User Choice Indication */
@@ -53,13 +52,12 @@ h1 {
 #user-choice {
     display: flex;
     flex-direction: row;
-
-    h3 {
-        color: black;
-    }
-
     align-items: center;
     justify-content: flex-start;
+}
+
+#user-choice h3 {
+    color: black;
 }
 
 /* Adjust as needed for spacing between label and city */
