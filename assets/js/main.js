@@ -61,7 +61,7 @@ function handleButtonClick() {
             const weatherIcon = data.weather[0].icon;
 
             cityNameElement.innerText = `${cityName}, ${countryCode}`;
-            currTempElement.innerText = `Temperature: ${currentTemp}°C`;
+            currTempElement.innerText = `${currentTemp}°C`;
             weatherIconElement.innerHTML = `<img src="${iconBaseUrl}${weatherIcon}@2x.png" alt="${weatherDescription}" />`;
 
             // computer choice vs today result icon
@@ -248,41 +248,35 @@ console.log(todayDay);
 
 //Establish Day2-6 Days and apply to HTML
 const day2 = document.getElementById("day2");
-  day2.innerText = `${dayConv(checkDay(todayDay+1))}`
+  day2.innerText = `${dayConv(checkDay(todayDay+1))}`;
 
   const day3 = document.getElementById("day3");
-  day3.innerText = `${dayConv(checkDay(todayDay+2))}`
+  day3.innerText = `${dayConv(checkDay(todayDay+2))}`;
 
   const day4 = document.getElementById("day4");
-  day4.innerText = `${dayConv(checkDay(todayDay+3))}`
+  day4.innerText = `${dayConv(checkDay(todayDay+3))}`;
 
   const day5 = document.getElementById("day5");
-  day5.innerText = `${dayConv(checkDay(todayDay+4))}`
+  day5.innerText = `${dayConv(checkDay(todayDay+4))}`;
 
   const day6 = document.getElementById("day6");
-  day6.innerText = `${dayConv(checkDay(todayDay+5))}`
+  day6.innerText = `${dayConv(checkDay(todayDay+5))}`;
 
 // Convert Day Index to Named Day 
 function dayConv(day) {
     switch (day) {
         case 0:
         return "Sunday";
-        break;
         case 1:
         return "Monday";
-        break;
         case 2:
         return "Tuesday";
-        break;
         case 3:
         return "Wednesday";
-        break;
         case 4:
         return "Thursday";
-        break;
         case 5:
         return "Friday";
-        break;
         case 6:
         return "Saturday";
     }

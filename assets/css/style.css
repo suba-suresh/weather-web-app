@@ -10,7 +10,6 @@ body, h1, h2, h3, h4, p {
 body {
     background-color: #A4C4EF;
     font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
@@ -52,7 +51,6 @@ form .btn {
 
 .game-banner {
     font-size: 2rem;
-    width: 600px; /* Fixed width */
     background-color: #EF7B45;
     border: 5px solid black; /* Corrected border syntax */
     margin: 0 auto; /* Center horizontally */
@@ -81,6 +79,10 @@ form .btn {
     color: black;
 }
 
+
+#user-choice h3 {
+    color: black;
+}
 
 /* Adjust as needed for spacing between label and city */
 #user-choice-label {
@@ -111,7 +113,6 @@ footer .btn {
     text-align: center;
     color: #a4c4ef;
     font-size: small;
-    margin-top: 10px;
 }
 
 .green-win {
@@ -120,12 +121,8 @@ footer .btn {
 }
 
 .red-lose {
-    color: red;
+    color: crimson;
     font-size: large;
-}
-
-#today-result {
-    padding-left: 2.5rem;
 }
 
 /* General styles for weather forecast */
