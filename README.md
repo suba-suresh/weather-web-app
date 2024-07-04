@@ -82,8 +82,8 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
 - __Today and 5 Days of Weather__
 
-  - Todays weather (Temperature in degrees celcius and the Cloud/Rain/Sun symbol) is shown at the left hand side.
-  - The weather for the next five days is shown to the right of todays weather.
+  - Todays weather (Temperature in degrees celcius and the Cloud/Rain/Sun symbol) is shown at the top.
+  - The weather for the next five days is shown below todays weather.
 
 ![Display The Weather](./assets/suppdocs/showWeatherScreenshot.png)
 
@@ -132,7 +132,7 @@ An ideation process was undertaken to suggest and prioritise the user experience
 -   ### Colour Scheme
     -  We decided that blue colours (clouds) mixed with bright (weather) colours would work for our website. Including blue was important to underpin the link to weather. The colours picked were generated using the website [Coolors](https://coolors.co/)
 
-        ![Colour Palette](documentation/colour-palette/colourpalette.png)
+        ![Colour Palette](./assets/suppdocs/sunCloudsRainColourPalette.png)
 
 -   ### Typography
     - Google Fonts were used to import Caveat and Maragrine fonts into styles.css.  These were chosen as they looked informal and related to the use of the site by children.
@@ -206,8 +206,7 @@ An ideation process was undertaken to suggest and prioritise the user experience
 - CSS
   - No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/validator)
 - JavaScript
-- No errors and 82 pre ES6 compatability warnings were received using the [JSHint validator](https://jshint.com/)
-- JavaScript.
+  - No errors and 82 pre ES6 compatability warnings were received using the [JSHint validator](https://jshint.com/)
 
 ### Unfixed Bugs
 
