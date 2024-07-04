@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
+/* default padding and margin */
+body, h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: #A4C4EF;
@@ -15,6 +20,20 @@ h1 {
     font-family: "Margarine", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+/* Form section */
+form {
+    margin-top: 1rem;
+}
+
+form .form-control,
+form .form-select {
+    margin-bottom: 0.5rem;
+}
+
+form .btn {
+    margin-top: 0.5rem;
 }
 
 #vs {
@@ -33,9 +52,11 @@ h1 {
 
 .game-banner {
     font-size: 2rem;
-    width: 600px;
+    width: 600px; /* Fixed width */
     background-color: #EF7B45;
-    border: 5px, solid, black;
+    border: 5px solid black; /* Corrected border syntax */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; /* Add padding for better spacing */
 }
 
 /* User Choice Indication */
@@ -53,14 +74,13 @@ h1 {
 #user-choice {
     display: flex;
     flex-direction: row;
-
-    h3 {
-        color: black;
-    }
-
     align-items: center;
     justify-content: flex-start;
 }
+#user-choice h3 {
+    color: black;
+}
+
 
 /* Adjust as needed for spacing between label and city */
 #user-choice-label {
@@ -71,6 +91,11 @@ h1 {
 
 footer {
     background-color: #357DED;
+}
+
+footer .btn {
+    width: auto;
+    margin-bottom: 0.5rem;
 }
 
 .games-rules {
@@ -86,6 +111,7 @@ footer {
     text-align: center;
     color: #a4c4ef;
     font-size: small;
+    margin-top: 10px;
 }
 
 .green-win {
@@ -96,4 +122,65 @@ footer {
 .red-lose {
     color: red;
     font-size: large;
+}
+
+#today-result {
+    padding-left: 2.5rem;
+}
+
+/* General styles for weather forecast */
+#five-day-forecast .col {
+    text-align: center;
+    padding: 10px;
+}
+
+.weather-icon {
+    margin-bottom: 10px;
+}
+
+.result-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    header h2 {
+        font-size: 1rem;
+    }
+
+    form .btn {
+        width: 100%;
+    }
+
+    #user-choice {
+        flex-direction: column;
+    }
+
+    #five-day-forecast .col {
+        margin-bottom: 0.5rem;
+    }
+
+    footer .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    footer .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+}
+
+@media (max-width: 575px) {
+    footer .btn {
+        width: 100%;
+    }
 }
