@@ -61,7 +61,7 @@ function handleButtonClick() {
             const weatherIcon = data.weather[0].icon;
 
             cityNameElement.innerText = `${cityName}, ${countryCode}`;
-            currTempElement.innerText = `Temperature: ${currentTemp}°C`;
+            currTempElement.innerText = `${currentTemp}°C`;
             weatherIconElement.innerHTML = `<img src="${iconBaseUrl}${weatherIcon}@2x.png" alt="${weatherDescription}" />`;
 
             // computer choice vs today result icon
