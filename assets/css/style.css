@@ -52,9 +52,11 @@ form .btn {
 
 .game-banner {
     font-size: 2rem;
-    width: 600px;
+    width: 600px; /* Fixed width */
     background-color: #EF7B45;
-    border: 5px, solid, black;
+    border: 5px solid black; /* Corrected border syntax */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; /* Add padding for better spacing */
 }
 
 /* User Choice Indication */
@@ -72,14 +74,13 @@ form .btn {
 #user-choice {
     display: flex;
     flex-direction: row;
-
-    h3 {
-        color: black;
-    }
-
     align-items: center;
     justify-content: flex-start;
 }
+#user-choice h3 {
+    color: black;
+}
+
 
 /* Adjust as needed for spacing between label and city */
 #user-choice-label {
