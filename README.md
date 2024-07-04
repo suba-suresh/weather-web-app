@@ -1,131 +1,239 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Sun Clouds Rain
 
-Welcome Suba Suresh,
+Sun Clouds Rain is a site that is targetted towards chiildren to look up the weather for a given location - with the current day and a further 5 days weather forecast shown for the location entered.  The experience also includes a game - Sun Clouds Rain, which is similar to Rock Paper Scissors but using the Weather.  The computer randomly picks some Weather, which is then compared against each of the six days of weather shown for the user. A winner is identified and displayed.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsive Mockup](./assets/suppdocs/responsiveBlack.png)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Index – Table of Contents
+* [User Experience (UX)](#user-experience-ux) 
+* [Features](#features)
+* [Design](#design)
+* [Project Management](#project-management)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-## Gitpod Reminders
+## User Experience (UX)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+An ideation process was undertaken to suggest and prioritise the user experience for the site.  From this user stories were generated, prioritised (including establishing a Minimum Viable Product) and managed using a Kanban board on GitHub.
 
-`python3 -m http.server`
+-   ### User stories
 
-A blue button should appear to click: _Make Public_,
+    -   #### Weather MVP (Minimum Viable Product):
+        1. In order to **see what website I am on** as a **user**, I can **see the h1 title at the top of the page**
+        2. In order to **select a location for the weather** as a **user**, I can **type in a location in the search bar**
+        3. In order to **submit my weather request** as a **user**, I can **click the search button**
+        4. In order to **see today’s weather** as a **user**, I can **see on the left side a big section with today’s temperature and weather symbol**
+        5. In order to **know that it is a weather forecast** as a **user**, I can **see a h2 that explains that this is a weather forecast**
+        6. In order to **see the forecast for the next five days** as a **user**, I can **see the next five days forecast just right of today’s forecast with day of the week listed above each symbol**
+        7. In order to **clearly understand what the website is about** as a **user**, I can **see a big orange container with a welcome message, brief explanation of what the website is for and what step one is**
 
-Another blue button should appear to click: _Open Browser_.
+        #### Weather Enhancements:
+        8. In order to **avoid getting information from a place in the wrong country** as a **user**, I can **select my country from the drop down**
+        9. In order to **see which location and country I have selected** as a **user**, I can **see my choice  next to the words: ‘user choice’**
+        10. In order to **understand where the weather location is** as a **user** I can **see a map with the selected location marked on it.**
+        11. In order to **get a full weather view** as a **user**, I can **see pressure, humidity, pollen count and wind speed as part of the forecast**
+        12. In order to **clearly see the 5 day forecast** as a **user**, I can **see the date for each days forecast**
+        13. In order to **promote the site as a way to engage users** as a **provider**, I can **give about us info on our organization and its aims**
+        
+        #### Sun Clouds Rain Game MVP:
+        14. In order to **know that my weather is competing against the computer** as a **user**, I can **see a big vs sign just right of my selection**
+        15. In order to **see what the computer has chosen** as a **user**, I can **see the computer’s weather icon below the words ‘The weather to beat’**
+        16. In order to **know which weather has beaten or been beaten by the computer’s choice** as a **user**, I can **see a + or - symbol below each days weather symbol**
+        17. In order to **to see a sum of how many wins I got** as a **user**, I can **see the tally next the text /6 at the bottom of the page**
+        18. In order to **clearly see who won the round** as a **user**, I can **see text at the bottom of the page which says ‘computer wins’ or ‘You won’**
+        19. In order to **to see information on how to play** as a **user**, I can **click the ‘how to play’ button found in the footer and see a diagram and steps appear in a pop up container**
+        20. In order to **compete against a new computer choice** as a **user**, I can **press the ‘next round’ button**
+        21. In order to **focus on the weather** as a **user**, I can **see the weather and choose whether or not to start the game.**
+          
+          #### Sun Clouds Rain Game Enhancements
+        22. In order to **get to know other Sun, Clouds, Rain competitors** as a **user**, I can **join a social media community of other users**
+        23. In order to **personalize the app** as a **user**, I can **enter my name and have it shown in the game versus the computer.**
+        24. In order to **promote continued playing of the game** as a **user**, I can **see cumulative scores for multiple rounds of the game**
+  
+## Features 
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+### Features Completed
 
-A blue button should appear to click: _Make Public_,
+- __Landing Page__
+  - The site consists of a single landing page which clearly identifies the purpose of the site, is responsive and allows the user to enter their location and get a Weather Forecast.  On first entering the site a large banner is shown in the midle of the screen to explain it.  This banner is removed once the user enters a location and requests a weather forecast.  It is then replaced with the Sun Clouds Rain scoring statement.
 
-Another blue button should appear to click: _Open Browser_.
+![Header](./assets/suppdocs/siteOpenScreenshot.png)
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- __Capture Search Location for Weather__
 
-To log into the Heroku toolbelt CLI:
+  - The site has a clearly marked input field for the user to enter the location that they want for the weather forecast.  A country pull down is also included, to help resolve any issues arising from identical location names in different countries.  At this stage only a limited number of countries have been added and future work is needed to increase the country coverage. It defaults to the UK.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- __Capture First name for Sun Clouds Rain Game__
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+  - The site has a clearly marked input field for the user to enter their first name.  Which is then used as part of the Sun Clouds Rain game to tailor the score messaging.
 
-### Connecting your Mongo database
+- __Submit Search Location for Weather Forecast__
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+  - The site has a clearly marked search (submit) button - to submit the location and get a Weather Forecast.  This button also submits the first name for the first round of the Sun Clouds Rain game.
+  - When this button is clicked - the orange information banner is also removed from the screen and replaced with the scoring statement for the Sun Clouds Rain Game.
 
-------
+- __Confirmation of Location__
 
-## Release History
+  - Todays weather togther with confirmation of the Location is displayed after search (submit) is clicked.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Confirmation of Location](./assets/suppdocs/enterInfoScreenshot.png)
 
-**June 18, 2024,** Add Mongo back into template
+- __Today and 5 Days of Weather__
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+  - Todays weather (Temperature in degrees celcius and the Cloud/Rain/Sun symbol) is shown at the top.
+  - The weather for the next five days is shown below todays weather.
 
-**May 28 2024:** Fix Mongo and Links installs
+![Display The Weather](./assets/suppdocs/showWeatherScreenshot.png)
 
-**April 26 2024:** Update node version to 16
+- __Sun Clouds Rain Game - Computer Choice__ 
 
-**September 20 2023:** Update Python version to 3.9.17.
+  - The computer randomnly selects some weather to play against the user in the Sun Clouds Rain Game.  This is displayed to the right, after the VS (versus) symbol.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- __Sun Clouds Rain Game Score__ 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - The result of the Sun Cluds Rain game is shown under each days weather.
+  - Green tick - user won.
+  - Red Cross - computer won.
+  - Blue Equals - draw.
+  - These results are correlaterd into an overal winners statement at the bottom tailored with the name the user entered.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- __Sun Clouds Rain Rules__
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  - A How to play set of rules is provided and when clicked the rules pop up in a modal. They can be cancelled and the user returns to the main screen.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Game Rules](./assets/suppdocs/showRulesScreenshotpng.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- __New game__
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  - The new game button, resets the Sun Clouds Rain Game.  The computer randomnly selects some new weather for the Sun Clouds Rain game.  The user can enter a new weather forecast location  - to get new weather and play the game again.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![New Game](./assets/suppdocs/showNewGameScreenshot.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Features Left to Implement
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- Countries: an initial 5 countris have been added for the country validation activity.
+	- This list to be extnded to cover a wider range of countries.
+  - Investigate better use of the existing API to facilitate this.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- Display of Weather Location on a Map
+	- It would be good to show a Google Map (or similar) of the location entered for the weather to help validate the weather is for the location expected.
+  - Investigate how the goggle maps API could be used to provide this.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- Multiple round scoring
+  - To encourage repeated use of the site, add an ongoing score capability that extemds the scoring across multiple rounds.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Design
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+-   ### Single Page
+    -  We decided that the site should be based on using a single page. Using JavaScript to dynamically change the display based on user entry.  A bootstrap modal was selected to display the game rules.
 
-------
+-   ### Colour Scheme
+    -  We decided that blue colours (clouds) mixed with bright (weather) colours would work for our website. Including blue was important to underpin the link to weather. The colours picked were generated using the website [Coolors](https://coolors.co/)
 
-## FAQ about the uptime script
+        ![Colour Palette](./assets/suppdocs/sunCloudsRainColourPalette.png)
 
-**Why have you added this script?**
+-   ### Typography
+    - Google Fonts were used to import Caveat and Maragrine fonts into styles.css.  These were chosen as they looked informal and related to the use of the site by children.
+ 
+    ![Font Pairing](./assets/suppdocs/googlefonts.png)   
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+-   ### Logo/Icon
+    - The logo design incorporates a smiling sun character image. This to reflect weather, the focus on younger users and creating fun from the game. The logo was generated using [bing copilot designer](https://www.bing.com/chat?q=Microsoft+Copilot&FORM=hpcodx)
+ 
+	![Logo](assets/favicon/android-chrome-192x192.png)
 
-**How will this affect me?**
+-   ### Wireframes
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+    -   #### Site Landing Wireframe
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+        ![Site Landing Wireframe](./assets/suppdocs/initialwireframe.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+    -   #### Weather and Game Wireframe
 
-**So….?**
+        ![Weather and Game Wireframe](./assets/suppdocs/gamewireframe.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+    -   #### Game Rules Wireframe
 
-**Can I opt out?**
+        ![Game Rules Wireframe](./assets/suppdocs/gamerules.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Project Management
 
-**Anything more?**
+- An ideation process was undertaken to suggest and prioritise the user experience for the site.  From this user stories were generated, prioritised (including establishing a    Minimum Viable Product) and managed using a Kanban board on GitHub.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- Each user story:
+  - Included Acceptance Criteria and Tasks.
+  - Was tagged with its MoSCoW priority rating.
+  - Was assigned an owner.
+  - Was managed by the owner across to Done
 
----
+- The Kanban board was regulalry reviewed bu the team.
 
-Happy coding!
+  -   #### Kanban Board
+
+      [Link to Kanban Board](https://github.com/users/suba-suresh/projects/2)
+
+- The Weather MVP and Sun Cloud Rain Game MVP user stories were completed.  In addition - some of the Weather and some of the Sun Cloud Rain Game enhancement user stories were completed.
+
+## Technologies Used
+
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+### Frameworks, Libraries & Programs Used
+
+-   [Google Fonts:](https://fonts.google.com/) was used to import the 'Margarine' and 'Caveat' fonts into the style.css file which are used across the project site page.
+-   [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
+-   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+-   [GitHub:](https://github.com/) is used as the respository for the projects code after being pushed from Git.
+-   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
+-   [bootstrap 5.3:](https://getbootstrap.com/) was the framework used to create a responsive page and the rules modal.
+-   [favicon:](https://favicon.io/) was used for creating website page tab icon.
+    
+
+## Testing 
+
+
+### Validator Testing 
+
+- HTML
+  - No errors and 4 warnings were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmarkchips.github.io%2Fprevent-awareness%2Findex.html)
+- CSS
+  - No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/validator)
+- JavaScript
+  - No errors and 82 pre ES6 compatability warnings were received using the [JSHint validator](https://jshint.com/)
+
+### Unfixed Bugs
+
+- Some location country combinations were allowed when they shoudn't have been.  This needs a deeper evaluation of the API interface and related JS code.
+
+## Deployment
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab
+  - Click pages on the left side
+  - In the branch section, use the drop down menu to select the main branch
+  - Click save, and then wait for the deployment to be generated
+  - Click visit site button at top of settings
+
+The live link can be found here - https://suba-suresh.github.io/weather-web-app/
+
+
+## Credits 
+
+### Content 
+
+- The layout was influenced by the following code institute project:
+	- [SME Weather API](https://github.com/kevin-ci/2404-BERKSB-APIs)
+- The OpenWeatherMap API was used to generate the current and forecast weather, together with generating the cloud/sun/rain weather images for the forecast.
+
+### Media
+
+- The fonts used were imported from [Google Fonts](https://fonts.google.com/)
+- The Weather images were used from the [OpenWeatherMap API](https://openweathermap.org/)
+- The ? and scoring symbols were used from [FontAwesome](https://fontawesome.com/)

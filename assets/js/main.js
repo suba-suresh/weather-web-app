@@ -290,5 +290,3 @@ function checkDay(day) {
         return day-7;
     }
 }
-
-
