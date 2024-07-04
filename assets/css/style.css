@@ -108,6 +108,10 @@ footer .btn {
     font-size: large;
 }
 
+#today-result {
+    padding-left: 2.5rem;
+}
+
 /* General styles for weather forecast */
 #five-day-forecast .col {
     text-align: center;
