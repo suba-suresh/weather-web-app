@@ -2,7 +2,7 @@
 
 Sun Clouds Rain is a site that is targetted towards chiildren to look up the weather for a given location - with the current day and a further 5 days weather forecast shown for the location entered.  The experience also includes a game - Sun Clouds Rain, which is similar to Rock Paper Scissors but using the Weather.  The computer randomly picks some Weather, which is then compared against each of the six days of weather shown for the user. A winner is identified and displayed.
 
-![Responsive Mockup](./assets/suppdocs/initialwireframe.png)
+![Responsive Mockup](./assets/suppdocs/responsiveBlack.png)
 
 ## Index – Table of Contents
 * [User Experience (UX)](#user-experience-ux) 
@@ -59,13 +59,11 @@ An ideation process was undertaken to suggest and prioritise the user experience
 - __Landing Page__
   - The site consists of a single landing page which clearly identifies the purpose of the site, is responsive and allows the user to enter their location and get a Weather Forecast.  On first entering the site a large banner is shown in the midle of the screen to explain it.  This banner is removed once the user enters a location and requests a weather forecast.  It is then replaced with the Sun Clouds Rain scoring statement.
 
-![Header](./assets/suppdocs/headerimage.png)
+![Header](./assets/suppdocs/siteOpenScreenshot.png)
 
 - __Capture Search Location for Weather__
 
   - The site has a clearly marked input field for the user to enter the location that they want for the weather forecast.  A country pull down is also included, to help resolve any issues arising from identical location names in different countries.  At this stage only a limited number of countries have been added and future work is needed to increase the country coverage. It defaults to the UK.
-
-![Capture Location](documentation/screenshots/home.png)
 
 - __Capture First name for Sun Clouds Rain Game__
 
@@ -80,20 +78,18 @@ An ideation process was undertaken to suggest and prioritise the user experience
 
   - Todays weather togther with confirmation of the Location is displayed after search (submit) is clicked.
 
-![Confirmation of Location](documentation/screenshots/home.png)
+![Confirmation of Location](./assets/suppdocs/enterInfoScreenshot.png)
 
 - __Today and 5 Days of Weather__
 
   - Todays weather (Temperature in degrees celcius and the Cloud/Rain/Sun symbol) is shown at the left hand side.
   - The weather for the next five days is shown to the right of todays weather.
 
-![Display The Weather](documentation/screenshots/home.png)
+![Display The Weather](./assets/suppdocs/showWeatherScreenshot.png)
 
 - __Sun Clouds Rain Game - Computer Choice__ 
 
   - The computer randomnly selects some weather to play against the user in the Sun Clouds Rain Game.  This is displayed to the right, after the VS (versus) symbol.
-
-![Sun Clouds Rain Computer Choice](documentation/screenshots/footer.png)
 
 - __Sun Clouds Rain Game Score__ 
 
@@ -103,19 +99,17 @@ An ideation process was undertaken to suggest and prioritise the user experience
   - Blue Equals - draw.
   - These results are correlaterd into an overal winners statement at the bottom tailored with the name the user entered.
 
-![Sun Clouds Rain Score](documentation/screenshots/feedback-form.png)
-
 - __Sun Clouds Rain Rules__
 
   - A How to play set of rules is provided and when clicked the rules pop up in a modal. They can be cancelled and the user returns to the main screen.
 
-![Game Rules](documentation/screenshots/resources-mobile.png)
+![Game Rules](./assets/suppdocs/showRulesScreenshotpng.png)
 
 - __New game__
 
   - The new game button, resets the Sun Clouds Rain Game.  The computer randomnly selects some new weather for the Sun Clouds Rain game.  The user can enter a new weather forecast location  - to get new weather and play the game again.
 
-![New Game](documentation/screenshots/resources-mobile.png)
+![New Game](./assets/suppdocs/showNewGameScreenshot.png)
 
 ### Features Left to Implement
 
@@ -127,20 +121,16 @@ An ideation process was undertaken to suggest and prioritise the user experience
 	- It would be good to show a Google Map (or similar) of the location entered for the weather to help validate the weather is for the location expected.
   - Investigate how the goggle maps API could be used to provide this.
 
-- Show day and dates against forecast
-	- It would help the users understanding of the weather to see the day name and date against each days forecast.
-  
 - Multiple round scoring
   - To encourage repeated use of the site, add an ongoing score capability that extemds the scoring across multiple rounds.
-
 
 ## Design
 
 -   ### Single Page
-    -  We agreed that the site should be based on using a single page. Using JavaScript to dynamically change the display based on user entry.  A bootstrap modal was selected to display the game rules.
+    -  We decided that the site should be based on using a single page. Using JavaScript to dynamically change the display based on user entry.  A bootstrap modal was selected to display the game rules.
 
 -   ### Colour Scheme
-    -  We agreed that blue colours (clouds) mixed with bright (weather) colours would work for our website. Including blue was important to underpin the link to weather. The colours picked were generated using the website [Coolors](https://coolors.co/)
+    -  We decided that blue colours (clouds) mixed with bright (weather) colours would work for our website. Including blue was important to underpin the link to weather. The colours picked were generated using the website [Coolors](https://coolors.co/)
 
         ![Colour Palette](documentation/colour-palette/colourpalette.png)
 
@@ -212,14 +202,16 @@ An ideation process was undertaken to suggest and prioritise the user experience
 ### Validator Testing 
 
 - HTML
-  - 4 errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmarkchips.github.io%2Fprevent-awareness%2Findex.html)
+  - No errors and 4 warnings were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmarkchips.github.io%2Fprevent-awareness%2Findex.html)
 - CSS
-  - 1 error was found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmarkchips.github.io%2Fprevent-awareness%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors were found when passing through the official [W3C validator](https://jigsaw.w3.org/css-validator/validator)
 - JavaScript
+- No errors and 82 pre ES6 compatability warnings were received using the [JSHint validator](https://jshint.com/)
+- JavaScript.
 
 ### Unfixed Bugs
 
-- Page content keeps disappearing behind header on some screen sizes. This relates to the header being position: fixed. The content needs the margin to be adjusted.
+- Some location country combinations were allowed when they shoudn't have been.  This needs a deeper evaluation of the API interface and related JS code.
 
 ## Deployment
 
@@ -244,4 +236,5 @@ The live link can be found here - https://suba-suresh.github.io/weather-web-app/
 ### Media
 
 - The fonts used were imported from [Google Fonts](https://fonts.google.com/)
-- The Weather images were used from the OpenWeatherMap API
+- The Weather images were used from the [OpenWeatherMap API](https://openweathermap.org/)
+- The ? and scoring symbols were used from [FontAwesome](https://fontawesome.com/)
