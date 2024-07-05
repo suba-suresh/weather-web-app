@@ -69,12 +69,12 @@ function handleButtonClick() {
                 case '01d':
                     if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
                         todayResult.innerHTML = equalIcon;
-                    } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
-                        ++userScore;
-                        todayResult.innerHTML = winIcon;
                     } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
                         ++computerScore;
                         todayResult.innerHTML = loseIcon;
+                    } else {
+                        ++userScore;
+                        todayResult.innerHTML = winIcon;
                     }
                     break;
                 case '03d':
@@ -83,20 +83,20 @@ function handleButtonClick() {
                         todayResult.innerHTML = loseIcon;
                     } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
                         todayResult.innerHTML = equalIcon;
-                    } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
+                    } else {
                         ++userScore;
                         todayResult.innerHTML = winIcon;
                     }
                     break;
                 case '09d':
-                    if (weatherIcon.startsWith('01') || weatherIcon.startsWith('02')) {
-                        ++userScore;
-                        todayResult.innerHTML = winIcon;
-                    } else if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
+                    if (weatherIcon.startsWith('03') || weatherIcon.startsWith('04') || weatherIcon.startsWith('50')) {
                         ++computerScore;
                         todayResult.innerHTML = loseIcon;
                     } else if (weatherIcon.startsWith('09') || weatherIcon.startsWith('10') || weatherIcon.startsWith('13')) {
                         todayResult.innerHTML = equalIcon;
+                    } else {
+                        ++userScore;
+                        todayResult.innerHTML = winIcon;
                     }
                     break;
                 default:
@@ -145,12 +145,12 @@ function fetchFiveDayForecast(cityName, countryCode) {
                     case '01d':
                         if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
                             dayResult.innerHTML = equalIcon;
-                        } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
-                            ++userScore;
-                            dayResult.innerHTML = winIcon;
                         } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
                             ++computerScore;
                             dayResult.innerHTML = loseIcon;
+                        } else {
+                            ++userScore;
+                            dayResult.innerHTML = winIcon;
                         }
                         break;
                     case '03d':
@@ -159,20 +159,20 @@ function fetchFiveDayForecast(cityName, countryCode) {
                             dayResult.innerHTML = loseIcon;
                         } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
                             dayResult.innerHTML = equalIcon;
-                        } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
+                        } else {
                             ++userScore;
                             dayResult.innerHTML = winIcon;
                         }
                         break;
                     case '09d':
-                        if (currentConditionImageCode.startsWith('01') || currentConditionImageCode.startsWith('02')) {
-                            ++userScore;
-                            dayResult.innerHTML = winIcon;
-                        } else if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
+                        if (currentConditionImageCode.startsWith('03') || currentConditionImageCode.startsWith('04') || currentConditionImageCode.startsWith('50')) {
                             ++computerScore;
                             dayResult.innerHTML = loseIcon;
                         } else if (currentConditionImageCode.startsWith('09') || currentConditionImageCode.startsWith('10') || currentConditionImageCode.startsWith('13')) {
                             dayResult.innerHTML = equalIcon;
+                        } else {
+                            ++userScore;
+                            dayResult.innerHTML = winIcon;
                         }
                         break;
                     default:
