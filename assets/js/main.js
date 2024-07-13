@@ -197,7 +197,6 @@ function makeComputerChoice() {
     const computerWeatherArr = ['01d','03d','09d'];
     randomComputerChoice = computerWeatherArr[Math.floor(Math.random()*3)];
     const computerChoiceImage = `https://openweathermap.org/img/wn/${randomComputerChoice}@4x.png`;
-    // document.getElementById('computer-default').classList.add("hidden");
     document.getElementById('computer-choice').innerHTML = `<img src="${computerChoiceImage}">`;
 }
 
